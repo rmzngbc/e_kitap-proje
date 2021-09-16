@@ -1,0 +1,5 @@
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.data\obj\Debug\net5.0\ekitap.data.csproj.AssemblyReference.cache
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.data\obj\Debug\net5.0\ekitap.data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.data\obj\Debug\net5.0\ekitap.data.AssemblyInfoInputs.cache
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.data\obj\Debug\net5.0\ekitap.data.AssemblyInfo.cs
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.data\obj\Debug\net5.0\ekitap.data.csproj.CoreCompileInputs.cache

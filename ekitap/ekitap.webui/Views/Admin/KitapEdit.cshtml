@@ -1,0 +1,121 @@
+
+@model KitapModel
+
+
+
+
+
+   
+<form asp-controller="Admin" asp-action="KitapEdit" method="POST">
+
+             <h1>Kitap Düzenle</h1>   
+         
+            <div >
+                        <input type="hidden" name="kitapId" value="@Model.kitapId">
+
+                        <div class="form-group row">
+                            <label asp-for="k_adi" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input class="form-control" asp-for="k_adi">
+                                <span asp-validation-for="k_adi" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="Url" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input class="form-control" asp-for="Url">
+                                <span asp-validation-for="Url" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label asp-for="k_fiyat" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input class="form-control" asp-for="k_fiyat">
+                                <span asp-validation-for="k_fiyat" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label asp-for="k_sayfa" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input class="form-control" asp-for="k_sayfa">
+                                <span asp-validation-for="k_sayfa" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label  asp-for="k_aciklama" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" asp-for="k_aciklama"></textarea>
+                                <span asp-validation-for="k_aciklama" class="text-danger"></span>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group row">
+                            <label asp-for="k_resim" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input class="form-control" asp-for="k_resim">
+                                <span asp-validation-for="k_resim" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-10 offset-sm-2">
+                                <button type="submit" class="btn btn-primary">Güncelle</button>
+                            </div>
+                        </div>
+                </div>
+                
+
+
+
+            </div>
+
+
+           
+           
+           
+            <!--
+                --kitaplara ait katogori ve kategori listesi,bir kitap hangi kategoriye aitse o kategori checked oluyor.
+            -->
+            <h1>Kategoriler</h1>
+            <div >
+                @foreach (var item in (List<kategori>)ViewBag.kategoriler)
+                {   
+                    if (item.kategoriId==Model.selectedkategori.kategoriId)
+                    {
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" 
+                            name="kategoriIds"
+                            value="@item.kategoriId"
+                            id="kategori_@(item.kategoriId)" checked>
+                            <label class="custom-control-label" for="kategori_@(item.kategoriId)">@item.ka_adi</label>
+                        </div>
+                    }
+
+                    else
+                    {
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" 
+                            name="kategoriIds"
+                            value="@item.kategoriId"
+                            id="kategori_@(item.kategoriId)">
+                            <label class="custom-control-label" for="kategori_@(item.kategoriId)">@item.ka_adi</label>
+                        </div>
+                    }
+                
+                }
+            </div>
+       
+      
+            
+    
+</form>
+
+
+@section Scripts
+{
+    <script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}
+    

@@ -1,0 +1,23 @@
+@using ekitap.webui.Models;
+@model kitapListViewModel
+
+
+
+
+
+<div class="col-md-4">
+		@await Component.InvokeAsync("kategori")			
+</div>
+    
+
+
+
+@await Html.PartialAsync("_kitap")
+
+
+
+
+  
+ 
+
+

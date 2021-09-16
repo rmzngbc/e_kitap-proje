@@ -1,0 +1,8 @@
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.entity\obj\Debug\netstandard2.0\ekitap.entity.AssemblyInfoInputs.cache
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.entity\obj\Debug\netstandard2.0\ekitap.entity.AssemblyInfo.cs
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.entity\bin\Debug\netstandard2.0\ekitap.entity.deps.json
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.entity\bin\Debug\netstandard2.0\ekitap.entity.dll
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.entity\bin\Debug\netstandard2.0\ekitap.entity.pdb
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.entity\obj\Debug\netstandard2.0\ekitap.entity.dll
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.entity\obj\Debug\netstandard2.0\ekitap.entity.pdb
+C:\Users\ramaz\Desktop\e-kitap_proje\ekitap\ekitap.entity\obj\Debug\netstandard2.0\ekitap.entity.csprojAssemblyReference.cache

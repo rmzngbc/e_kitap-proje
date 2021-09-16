@@ -1,0 +1,19 @@
+
+@model List<kategori>
+
+
+ <div class="list-group">
+    <a href="/kitaplar" class="list-group-item list-group-item-action">Tüm Kategoriler</a>
+
+    @foreach (var kategori in Model)
+    {
+
+        <a  
+            href="/kitaplar/@kategori.Url"
+            class="list-group-item list-group-item-action @(ViewBag.SelectedCategory == kategori.Url?"active":"")">
+                @kategori.ka_adi
+        </a>
+
+       
+    }
+</div> 

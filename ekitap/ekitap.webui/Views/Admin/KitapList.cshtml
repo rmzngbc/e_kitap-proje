@@ -1,0 +1,74 @@
+@model kitapListViewModel
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Admin Kitaplar</h1>
+        <hr>
+         <a asp-controller="admin" asp-action="KitapEkle" class="btn btn-primary btn-sm mb-5">Kitap Ekle</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td style="width: 30px;">Id</td>
+                    <td style="width: 100px;">Kitap Adı</td>
+                    <td>Name</td>
+                    <td style="width: 20px;">Kitap Fiyat</td>
+                    <td style="width: 20px;">Kitap Sayfa</td>
+                    <td style="width: 20px;">Anasayfadamı</td>
+                    <td style="width: 20px;">Onaylımı</td>
+
+                    <td style="width: 150px;"></td>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model.Kitaplar.Count>0)
+                {
+                       @foreach (var item in Model.Kitaplar)
+                        {
+                            <tr>
+                                <td>@item.kitapId</td>
+                                <td><img src="~/img/@item.k_resim" width="80"></td>
+                                <td>@item.k_adi</td>
+                                <td>@item.k_fiyat</td>
+                                <td>@item.k_sayfa</td>
+                                <td>
+                                    @if(item.k_anasayfa)
+                                    {
+                                        <i class="fas fa-check-circle"></i>
+                                    }else{
+                                        <i class="fas fa-times-circle"></i>
+                                    }
+                                </td>
+                                <td>
+                                    @if(item.k_onay)
+                                    {
+                                        <i class="fas fa-check-circle"></i>
+                                    }else{
+                                        <i class="fas fa-times-circle"></i>
+                                    }
+                                </td>
+                                <td>
+                                    <a href="/admin/kitaplar/@item.kitapId" class="btn btn-primary btn-sm mr-2">Edit</a>
+                                 
+                                  <form action="/admin/KitapDelete" method="POST" style="display: inline;">
+                                        <input type="hidden" name="kitapId" value="@item.kitapId">
+                                        <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                                    </form>                   
+
+
+
+                                   
+                                </td>
+                        </tr>
+                        }
+                }else{
+                    <div class="alert alert-warning">
+                        <h3>No Products</h3>
+                    </div>
+                }
+
+             
+            </tbody>
+        </table>
+    </div>
+</div>

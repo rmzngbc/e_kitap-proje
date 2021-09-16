@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  
+  <ItemGroup>
+    <ProjectReference Include="..\ekitap.entity\ekitap.entity.csproj" />
+    <ProjectReference Include="..\ekitap.data\ekitap.data.csproj" />
+  </ItemGroup>
+
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+
+
+
+</Project>
