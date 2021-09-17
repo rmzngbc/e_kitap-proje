@@ -67,6 +67,11 @@ namespace ekitap.business.Concrete
             return _kitapRepository.KitapAra(KelimeAra);
         }
 
+        public void Create(kitap entity,int[] yazarIds)
+        {
+             _kitapRepository.Create(entity,yazarIds);
+        }
+
       
         
     }

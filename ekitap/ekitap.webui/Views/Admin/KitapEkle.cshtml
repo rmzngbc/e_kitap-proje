@@ -71,6 +71,7 @@
                 --select-option ile kategori seçimi,kateogriyi seçiyoruz kategoriId bilgisini;
                     modele gönderiyor.
             -->
+            <div>
             <label >Kategori</label>
             <select asp-for="kategoriId">
                
@@ -80,6 +81,26 @@
                 }
                
             </select>
+            </div>
+
+            <!--
+                --kitaba yazar ekleme
+            -->
+            <div style="margin-top: 10px;">
+            <label >Yazar1:</label>
+            <select name="yazarIds" multiple>
+               
+                @foreach (var item in (List<yazar>)ViewBag.yazarlar)
+                {
+                     <option value="@item.yazarId">@item.yazarad @item.yazarsoyad</option>
+                }
+             </select>
+            </div>
+
+            
+
+          
+
         
 
              <div class="form-group row">

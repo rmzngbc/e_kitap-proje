@@ -3,6 +3,7 @@ using System.Linq;
 using ekitap.data.Abstract;
 using ekitap.entity;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 
 namespace ekitap.data.Concrete.EfCore
@@ -84,7 +85,7 @@ namespace ekitap.data.Concrete.EfCore
             {
 
                  var kitaps=db.kitaplar
-                        .Where(i=>i.k_anasayfa)
+                        //.Where(i=>i.k_anasayfa)
                         .AsQueryable();
 
                  if(!string.IsNullOrEmpty(kategoriad))
@@ -111,6 +112,46 @@ namespace ekitap.data.Concrete.EfCore
                         .Where(i=>i.k_onay && (i.k_adi.ToLower().Contains(KelimeAra.ToLower()))).ToList();
                  
             }
+            
+        }
+
+        //--kitap ekleme yazar ile:
+        public void Create(kitap entity,int[] yazarIds)
+        {   
+
+            //Console.WriteLine(yazarIds);
+            using (var db=new ekitapContext())
+            {   
+               
+               
+                db.kitaplar.Add(entity);
+                db.SaveChanges();
+
+                
+                var kitap=db.kitaplar
+                                    .OrderByDescending(i=>i.kitapId)
+                                    .FirstOrDefault();
+                
+               
+                kitap.kitapyazarlar=yazarIds.Select(yazid=>new kitapyazar()
+                {
+                    yazarId=yazid,
+                    kitapId=kitap.kitapId
+
+                }).ToList();
+               
+
+                db.Entry(entity).State = EntityState.Modified;
+                db.SaveChanges();
+                Console.WriteLine("güncelleme işlemi gerçekleşti.");
+                
+                
+                
+                
+               
+                
+            }
+
             
         }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.data\\ekitap.data.csproj": {}
+    "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.data\\ekitap.data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.data\\ekitap.data.csproj": {
+    "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.data\\ekitap.data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.data\\ekitap.data.csproj",
+        "projectUniqueName": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.data\\ekitap.data.csproj",
         "projectName": "ekitap.data",
-        "projectPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.data\\ekitap.data.csproj",
+        "projectPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.data\\ekitap.data.csproj",
         "packagesPath": "C:\\Users\\ramaz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.data\\obj\\",
+        "outputPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ramaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.entity\\ekitap.entity.csproj": {
-                "projectPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.entity\\ekitap.entity.csproj"
+              "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.entity\\ekitap.entity.csproj": {
+                "projectPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.entity\\ekitap.entity.csproj"
               }
             }
           }
@@ -77,14 +77,14 @@
         }
       }
     },
-    "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.entity\\ekitap.entity.csproj": {
+    "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.entity\\ekitap.entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.entity\\ekitap.entity.csproj",
+        "projectUniqueName": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.entity\\ekitap.entity.csproj",
         "projectName": "ekitap.entity",
-        "projectPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.entity\\ekitap.entity.csproj",
+        "projectPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.entity\\ekitap.entity.csproj",
         "packagesPath": "C:\\Users\\ramaz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.entity\\obj\\",
+        "outputPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ramaz\\AppData\\Roaming\\NuGet\\NuGet.Config",

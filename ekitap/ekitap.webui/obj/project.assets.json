@@ -1338,11 +1338,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.webui\\ekitap.webui.csproj",
+      "projectUniqueName": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\ekitap.webui.csproj",
       "projectName": "ekitap.webui",
-      "projectPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.webui\\ekitap.webui.csproj",
+      "projectPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\ekitap.webui.csproj",
       "packagesPath": "C:\\Users\\ramaz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.webui\\obj\\",
+      "outputPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ramaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1357,16 +1357,15 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.business\\ekitap.business.csproj": {
-              "projectPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.business\\ekitap.business.csproj"
+            "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.business\\ekitap.business.csproj": {
+              "projectPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.business\\ekitap.business.csproj"
             },
-            "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.data\\ekitap.data.csproj": {
-              "projectPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.data\\ekitap.data.csproj"
+            "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.data\\ekitap.data.csproj": {
+              "projectPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.data\\ekitap.data.csproj"
             },
-            "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.entity\\ekitap.entity.csproj": {
-              "projectPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.entity\\ekitap.entity.csproj"
+            "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.entity\\ekitap.entity.csproj": {
+              "projectPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.entity\\ekitap.entity.csproj"
             }
           }
         }
@@ -1379,7 +1378,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -1418,7 +1416,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

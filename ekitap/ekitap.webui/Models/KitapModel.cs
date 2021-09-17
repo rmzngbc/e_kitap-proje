@@ -34,5 +34,8 @@ namespace ekitap.webui.Models
         [Required(ErrorMessage="kategoriId zorunlu bir alan")]
         public int kategoriId { get; set; }
         public kategori selectedkategori { get; set; }
+        //yazar
+        public yazar yazar { get; set; }
+        public List<yazar> yazarId { get; set; }
     }
 }

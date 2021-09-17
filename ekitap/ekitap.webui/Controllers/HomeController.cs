@@ -18,7 +18,7 @@ namespace ekitap.webui.Controllers
         public IActionResult Index(string kategori,int page=1)
         {   
            
-           const int pageSize=3;
+           const int pageSize=4;
 
             var kitap_ka=new kitapListViewModel()
             {

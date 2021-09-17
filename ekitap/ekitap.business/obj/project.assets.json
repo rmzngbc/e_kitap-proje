@@ -1695,11 +1695,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.business\\ekitap.business.csproj",
+      "projectUniqueName": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.business\\ekitap.business.csproj",
       "projectName": "ekitap.business",
-      "projectPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.business\\ekitap.business.csproj",
+      "projectPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.business\\ekitap.business.csproj",
       "packagesPath": "C:\\Users\\ramaz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.business\\obj\\",
+      "outputPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ramaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1715,11 +1715,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.data\\ekitap.data.csproj": {
-              "projectPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.data\\ekitap.data.csproj"
+            "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.data\\ekitap.data.csproj": {
+              "projectPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.data\\ekitap.data.csproj"
             },
-            "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.entity\\ekitap.entity.csproj": {
-              "projectPath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.entity\\ekitap.entity.csproj"
+            "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.entity\\ekitap.entity.csproj": {
+              "projectPath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.entity\\ekitap.entity.csproj"
             }
           }
         }

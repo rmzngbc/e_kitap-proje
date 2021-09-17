@@ -28,6 +28,8 @@ namespace ekitap.business.Abstract
 
         List<kitap> KitapAra(string KelimeAra);
 
+        void Create(kitap entity,int[] yazarIds);
+
        
     }
 }

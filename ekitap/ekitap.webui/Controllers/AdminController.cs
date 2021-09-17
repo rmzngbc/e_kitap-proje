@@ -39,11 +39,12 @@ namespace ekitap.webui.Controllers
         {
             //db den bütün kategorileri bir değişkene aktaralım:
             ViewBag.kategoriler=_kategoriService.GetAll();
+            ViewBag.yazarlar=_yazarService.GetAll();
             return View();
         }
 
         [HttpPost]
-        public IActionResult KitapEkle(KitapModel model)
+        public IActionResult KitapEkle(KitapModel model,int[] yazarIds)
         {   
 
             //--validasyon işlemi,client validation
@@ -56,11 +57,14 @@ namespace ekitap.webui.Controllers
                     k_sayfa=model.k_sayfa,
                     k_resim=model.k_resim,
                     k_aciklama=model.k_aciklama,
-                    kategoriId=model.kategoriId
+                    kategoriId=model.kategoriId,
+                    
 
                 };
 
-                _kitapService.Create(entity);
+
+                
+                _kitapService.Create(entity,yazarIds);
 
 
                 var msg = new AlertMessage()
