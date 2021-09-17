@@ -112,11 +112,14 @@ namespace ekitap.webui.Controllers
                 k_sayfa=entity.k_sayfa,
                 k_resim=entity.k_resim,
                 k_aciklama=entity.k_aciklama,
-                selectedkategori=entity.kategori
+                selectedkategori=entity.kategori,
+                selectedyazarlar=entity.kitapyazarlar.Select(i=>i.yazar).ToList()
             };
 
             //db den bütün kategorileri bir değişkene aktaralım:
             ViewBag.kategoriler=_kategoriService.GetAll();
+            //db deki yazarları bir değişkene atayalım:
+            ViewBag.yazarlar=_yazarService.GetAll();
 
             return View(model);
 
@@ -127,7 +130,7 @@ namespace ekitap.webui.Controllers
 
         //--kitap bilgilerini güncelleme ve kategori bilgisini de güncelleme.
         [HttpPost]
-        public IActionResult KitapEdit(KitapModel model,int kategoriIds)
+        public IActionResult KitapEdit(KitapModel model,int kategoriIds,int[] yazarIds)
         {   
             //Console.WriteLine(kategoriIds);
             var entity = _kitapService.GetById(model.kitapId);
@@ -136,6 +139,7 @@ namespace ekitap.webui.Controllers
                 return NotFound();
             }
 
+            entity.kitapId=model.kitapId;
             entity.k_adi=model.k_adi;
             entity.Url=model.Url;
             entity.k_fiyat=model.k_fiyat;
@@ -143,10 +147,12 @@ namespace ekitap.webui.Controllers
             entity.k_resim=model.k_resim;
             entity.k_aciklama=model.k_aciklama;
             entity.kategoriId=kategoriIds;
-
+           
+            
+            
             //günelleme işlemi:
             //bir kitaba ait kategoriler de güncellenebilir.
-            _kitapService.Update(entity);
+            _kitapService.Update(entity,kategoriIds,yazarIds);
 
             var msg = new AlertMessage()
             {            

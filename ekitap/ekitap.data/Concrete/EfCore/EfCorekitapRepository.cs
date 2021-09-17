@@ -21,6 +21,8 @@ namespace ekitap.data.Concrete.EfCore
                 
                 return db.kitaplar
                           .Where(i=>i.kitapId==id)
+                          .Include(i=>i.kitapyazarlar)
+                          .ThenInclude(i=>i.yazar)
                           .Include(i=>i.kategori)
                           .FirstOrDefault();
                  
@@ -144,16 +146,52 @@ namespace ekitap.data.Concrete.EfCore
                 db.Entry(entity).State = EntityState.Modified;
                 db.SaveChanges();
                 Console.WriteLine("güncelleme işlemi gerçekleşti.");
-                
-                
-                
-                
                
                 
             }
 
             
         }
+
+        //--kitap güncelleme,kategori ve yazarları ile birlikte:
+
+
+        public void Update(kitap entity,int kategoriIds,int[] yazarIds)
+        {
+            using (var db=new ekitapContext())
+            {
+                var kitap=db.kitaplar
+                            .Include(i=>i.kitapyazarlar)
+                            .FirstOrDefault(i=>i.kitapId==entity.kitapId);
+
+                if(kitap!=null)
+                {
+                        //kitap.kitapId=entity.kitapId;
+                        kitap.k_adi=entity.k_adi;
+                        kitap.Url=entity.Url;
+                        kitap.k_fiyat=entity.k_fiyat;
+                        kitap.k_sayfa=entity.k_sayfa;
+                        kitap.k_resim=entity.k_resim;
+                        kitap.k_aciklama=entity.k_aciklama;
+                        kitap.kategoriId=kategoriIds;
+                        
+                        kitap.kitapyazarlar=yazarIds.Select(yazid=>new kitapyazar()
+                        {
+                            kitapId=entity.kitapId,
+                            yazarId=yazid
+                        }).ToList();
+                        
+                        db.SaveChanges();
+                }
+                 
+            }
+
+
+        }
+    
+
+
+
 
       
 

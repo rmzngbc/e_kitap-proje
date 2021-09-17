@@ -72,6 +72,11 @@ namespace ekitap.business.Concrete
              _kitapRepository.Create(entity,yazarIds);
         }
 
+        public void Update(kitap entity,int kategoriIds,int[] yazarIds)
+        {
+             _kitapRepository.Update(entity,kategoriIds,yazarIds);
+        }
+
       
         
     }

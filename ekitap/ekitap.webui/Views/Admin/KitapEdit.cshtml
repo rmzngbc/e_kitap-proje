@@ -65,6 +65,35 @@
                             </div>
                         </div>
                 </div>
+
+                
+            <!--Yazarlar,tüm yazarlar listelenecek ve kitaba ait olan yazarlar selected gözükecek-->
+             <div style="margin-top: 10px;">
+            <label >Yazar1:</label>
+            <select name="yazarIds" multiple>
+               
+                @foreach (var item in (List<yazar>)ViewBag.yazarlar)
+                {
+                   foreach (var itema in Model.selectedyazarlar)
+                   {
+                       if (item.yazarId==itema.yazarId)
+                       {    
+                           
+                           <option value="@item.yazarId" selected>@item.yazarad @item.yazarsoyad</option>
+                       }
+                       
+                       else
+                       {
+                           <option value="@item.yazarId">@item.yazarad @item.yazarsoyad</option>
+                       }
+                       
+                   }                    
+                     
+                }
+             </select>
+            </div>
+            
+           
                 
 
 
@@ -106,11 +135,14 @@
                 
                 }
             </div>
+
        
       
             
     
 </form>
+
+
 
 
 @section Scripts

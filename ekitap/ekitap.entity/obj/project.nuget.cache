@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZEPMln3AIEPHahZTVUAwdWmf4+xnFrwbHG0HnvI0lr7oI5KV2uLRMdHQbeiRXcuA5qYVNkfDC2ELeMXiMC7Rlw==",
+  "dgSpecHash": "TGLZaIJuALQ5xqQ8Vwdpa6mmmgC4VUoHalJUK2ciMfEQKyloqIGqVl+zs2Umu5rgWQuB04Qig9qoaQbZOTATDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.entity\\ekitap.entity.csproj",
+  "projectFilePath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.entity\\ekitap.entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ramaz\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\ramaz\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

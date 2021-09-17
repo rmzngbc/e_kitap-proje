@@ -14,9 +14,9 @@ C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.data\bin\Debug\netstandard2.0
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.data\bin\Debug\netstandard2.0\ekitap.data.pdb
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.data\bin\Debug\netstandard2.0\ekitap.entity.dll
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.data\bin\Debug\netstandard2.0\ekitap.entity.pdb
-C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.data\obj\Debug\netstandard2.0\ekitap.data.csprojAssemblyReference.cache
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.data\obj\Debug\netstandard2.0\ekitap.data.AssemblyInfoInputs.cache
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.data\obj\Debug\netstandard2.0\ekitap.data.AssemblyInfo.cs
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.data\obj\Debug\netstandard2.0\ekitap.data.csproj.CopyComplete
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.data\obj\Debug\netstandard2.0\ekitap.data.dll
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.data\obj\Debug\netstandard2.0\ekitap.data.pdb
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.data\obj\Debug\netstandard2.0\ekitap.data.csprojAssemblyReference.cache

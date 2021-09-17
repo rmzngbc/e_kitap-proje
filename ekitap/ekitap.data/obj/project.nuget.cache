@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5yWPo9eMwHWTr6yMdx67Zc6pAZljSnzq8Uvaak8D4Z0O5uWzqt6KB/Jm+/fpVXg5geTXIF5yPEihCX5OT615sQ==",
+  "dgSpecHash": "qz77p6nX9BJAuft/MeCIJRgeauGsbH/DpkH5PHqLUmTGMxcr9AvwKicJNM9mkeM78PSyBwisxvURfYKEjcBwHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ramaz\\Desktop\\e-kitap_proje\\ekitap\\ekitap.data\\ekitap.data.csproj",
+  "projectFilePath": "C:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.data\\ekitap.data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ramaz\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\ramaz\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

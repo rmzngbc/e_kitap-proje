@@ -21,6 +21,9 @@ namespace ekitap.data.Abstract
         List<kitap> KitapAra(string KelimeAra);
 
         void Create(kitap entity,int[] yazarIds);
+        
+        void Update(kitap entity,int kategoriIds,int[] yazarIds);
+
 
         
 

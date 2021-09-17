@@ -30,6 +30,8 @@ namespace ekitap.business.Abstract
 
         void Create(kitap entity,int[] yazarIds);
 
+        void Update(kitap entity,int kategoriIds,int[] yazarIds);
+
        
     }
 }
