@@ -57,6 +57,8 @@ namespace ekitap.data.Concrete.EfCore
                    return db.kitaplar
                           .Where(i=>i.Url==url)
                           .Include(i=>i.kategori)
+                          .Include(i=>i.kitapyazarlar)
+                          .ThenInclude(i=>i.yazar)
                           .FirstOrDefault();
                  
             }

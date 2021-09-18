@@ -17,7 +17,7 @@ namespace ekitap.webui.Controllers
             this._kitapService=kitapService;
         }
 
-        //--kitap ayrın metodu:
+        //--kitap ayrıntı metodu:
 
         public IActionResult Details(string url)
         {

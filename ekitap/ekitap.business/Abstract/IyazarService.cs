@@ -8,5 +8,9 @@ namespace ekitap.business.Abstract
          void Create(yazar entity);
 
          List<yazar> GetAll();
+
+         yazar GetById(int Id);
+
+         void Update(yazar entiy);
     }
 }

@@ -155,6 +155,14 @@ namespace ekitap.webui
                     defaults:new{controller="admin",action="YazarEkle"}
                 );
 
+                //--yazar-edit:
+                 endpoints.MapControllerRoute(
+                    name:"adminyazaredit",
+                    pattern:"admin/yazarlar/edit/{id?}",
+                    defaults:new{controller="admin",action="YazarEdit"}
+                );
+
+
 
 
 

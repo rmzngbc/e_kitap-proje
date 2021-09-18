@@ -348,10 +348,46 @@ namespace ekitap.webui.Controllers
             
         }
 
+        //yazar edit:
+        [HttpGet]
+        public IActionResult YazarEdit(int? Id)
+        {   
+            var entity=_yazarService.GetById((int)Id);
+
+            var model=new YazarModel()
+            {   
+                yazarId=entity.yazarId,
+                yazarad=entity.yazarad,
+                yazarsoyad=entity.yazarsoyad
+            };
+            
+            return View(model);
+        }
+
+        //yazar editleme işleminden sonra post metoduna gelecek
+        [HttpPost]
+        public IActionResult YazarEdit(YazarModel model)
+        {   
+            
+            var entity=_yazarService.GetById(model.yazarId);
+            if(entity==null)
+            {
+                return NotFound();
+            }
+
+            
+            entity.yazarad=model.yazarad;
+            entity.yazarsoyad=model.yazarsoyad;
+
+            _yazarService.Update(entity);
+            
+            return RedirectToAction("YazarList");
+
+        }
+
         //--admin paneli:
         public IActionResult AdminPanel()
         {
-
             return View();
 
         }

@@ -73,9 +73,11 @@
             <select name="yazarIds" multiple>
                
                 @foreach (var item in (List<yazar>)ViewBag.yazarlar)
-                {
-                   foreach (var itema in Model.selectedyazarlar)
+                {    
+                   if (Model.selectedyazarlar.Count>0)
                    {
+                         foreach (var itema in Model.selectedyazarlar)
+                        {
                        if (item.yazarId==itema.yazarId)
                        {    
                            
@@ -86,8 +88,12 @@
                        {
                            <option value="@item.yazarId">@item.yazarad @item.yazarsoyad</option>
                        }
+                       } 
                        
-                   }                    
+                   } 
+                    <option value="@item.yazarId">@item.yazarad @item.yazarsoyad</option>
+
+                                    
                      
                 }
              </select>

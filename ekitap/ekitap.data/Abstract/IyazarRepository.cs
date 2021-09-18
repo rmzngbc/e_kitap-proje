@@ -6,6 +6,8 @@ namespace ekitap.data.Abstract
     public interface IyazarRepository:IRepository<yazar>
     {
         
+        yazar GetById(int Id);
+
          
     }
 }

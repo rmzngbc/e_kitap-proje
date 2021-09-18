@@ -27,6 +27,17 @@ namespace ekitap.business.Concrete
             return _yazarRepository.GetAll();
         }
 
+        public yazar GetById(int Id)
+        {
+            return _yazarRepository.GetById(Id);
+        }
+
+        public void Update(yazar entity)
+        {
+             _yazarRepository.Update(entity);
+        }
+
+
 
 
     }
