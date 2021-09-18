@@ -358,7 +358,8 @@ namespace ekitap.webui.Controllers
             {   
                 yazarId=entity.yazarId,
                 yazarad=entity.yazarad,
-                yazarsoyad=entity.yazarsoyad
+                yazarsoyad=entity.yazarsoyad,
+                kitaplar=entity.kitapyazarlar.Select(i=>i.kitap).ToList()
             };
             
             return View(model);

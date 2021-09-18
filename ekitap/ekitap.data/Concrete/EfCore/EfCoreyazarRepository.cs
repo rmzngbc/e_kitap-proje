@@ -12,7 +12,10 @@ namespace ekitap.data.Concrete.EfCore
         {
             using (var db=new ekitapContext())
             {
-                return db.yazarlar.Where(i=>i.yazarId==Id).FirstOrDefault();
+                return db.yazarlar.Where(i=>i.yazarId==Id)
+                                   .Include(i=>i.kitapyazarlar)
+                                   .ThenInclude(i=>i.kitap) 
+                                   .FirstOrDefault();
                  
             }
 

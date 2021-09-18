@@ -31,9 +31,74 @@
                     <button type="submit" class="btn btn-primary ml-5">Yazar Düzenle</button>
                 </div>
             </div>
+
     </form>
     </div>
 </div>
+        <!--
+            --yazara ait olan kitapların listesi:
+        -->
+         <div class="col-md-8">        
+        <div class="row">
+            <div class="col-md-12">      
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr>
+                            <td style="width: 30px;">Id</td>
+                            <td style="width: 100px;">resim</td>
+                            <td>Kitap Adı</td>
+                            <td style="width: 20px;">fiyat</td>
+                            <td style="width: 20px;">Onaylı</td>
+                            <td style="width: 150px;"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if(Model.kitaplar.Count>0)
+                        {
+                            @foreach (var item in Model.kitaplar)
+                                {
+                                    <tr>
+                                        <td>@item.kitapId</td>
+                                        <td><img src="~/img/@item.k_resim" width="80"></td>
+                                        <td>@item.k_adi</td>
+                                        <td>@item.k_fiyat</td>                                       
+                                        <td>
+                                            @if(item.k_onay)
+                                            {
+                                                <i class="fas fa-check-circle"></i>
+                                            }else{
+                                                <i class="fas fa-times-circle"></i>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a href="#" class="btn btn-primary btn-sm mr-2">Düzenle</a>
+                                            
+                                            <form action="#" method="POST" style="display: inline;">
+                                                <input type="hidden" name="" value="">
+                                                <input type="hidden" name="" value="">
+                                                <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                                            </form>
+                                        </td>
+
+
+                                       
+                                </tr>
+                                }
+                        }else{
+                            <div class="alert alert-warning">
+                                <h3>No Products</h3>
+                            </div>
+                        }
+
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 
 
 
