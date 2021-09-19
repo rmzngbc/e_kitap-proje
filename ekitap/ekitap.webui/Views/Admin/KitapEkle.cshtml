@@ -12,7 +12,7 @@
     <br>
     <div class="col-md-8">
 
-        <form asp-controller="admin" asp-action="KitapEkle" method="POST">
+        <form asp-controller="admin" asp-action="KitapEkle" method="POST" enctype="multipart/form-data">
 
              <div class="form-group row">
                 <label asp-for="k_adi" class="col-sm-2 col-form-label"></label>
@@ -58,12 +58,18 @@
                 </div>
             </div>
 
+            <!--
+                --olutşurulan bir kitap entity si için resim upload etme
+            -->
 
             <div class="form-group row">
                 <label asp-for="k_resim" class="col-sm-2 col-form-label"></label>
                 <div class="col-sm-10">
+                    <input type="file" name="file">
+                    <!--
                     <input class="form-control" asp-for="k_resim">
                     <span asp-validation-for="k_resim" class="text-danger"></span>
+                    -->
                 </div>
             </div>
             

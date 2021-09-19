@@ -1,10 +1,18 @@
-using Microsoft.AspNetCore.Mvc;
-using ekitap.business.Abstract;
-using ekitap.webui.Models;
-using ekitap.entity;
-using Newtonsoft.Json;
 using System;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using ekitap.business.Abstract;
+using ekitap.entity;
+using ekitap.webui.Models;
+
+
+
+using Microsoft.AspNetCore.Http;
+
 
 namespace ekitap.webui.Controllers
 {
@@ -44,7 +52,7 @@ namespace ekitap.webui.Controllers
         }
 
         [HttpPost]
-        public IActionResult KitapEkle(KitapModel model,int[] yazarIds)
+        public async Task<IActionResult> KitapEkle(KitapModel model,int[] yazarIds,IFormFile file)
         {   
 
             //--validasyon işlemi,client validation
@@ -55,12 +63,28 @@ namespace ekitap.webui.Controllers
                     Url=model.Url,
                     k_fiyat=model.k_fiyat,
                     k_sayfa=model.k_sayfa,
-                    k_resim=model.k_resim,
+                    //k_resim=model.k_resim,
                     k_aciklama=model.k_aciklama,
                     kategoriId=model.kategoriId,
                     
 
                 };
+
+                if (file!=null)
+                {
+                    Console.WriteLine(file.FileName);
+                    var extention = Path.GetExtension(file.FileName);
+                    var randomName = string.Format($"{Guid.NewGuid()}{extention}");
+                    entity.k_resim = randomName;
+                    var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot\\img",randomName);
+
+                    using(var stream = new FileStream(path,FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                }
+
+
 
 
                 
