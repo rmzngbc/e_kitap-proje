@@ -15,5 +15,6 @@ namespace ekitap.business.Abstract
         kategori GetById(int id);
 
         void deletefromkategori(int kitapId);
+
     }
 }

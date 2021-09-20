@@ -47,6 +47,8 @@ namespace ekitap.business.Concrete
         {            
              _kategoriRepository.deletefromkategori(kitapId);
         }
+
+       
         
 
         

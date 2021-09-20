@@ -4,6 +4,7 @@ using ekitap.data.Abstract;
 using ekitap.entity;
 using Microsoft.EntityFrameworkCore;
 using ekitap.entity;
+using System;
 
 
 namespace ekitap.data.Concrete.EfCore
@@ -36,5 +37,7 @@ namespace ekitap.data.Concrete.EfCore
                  
             }
         }
+
+       
     }
 }

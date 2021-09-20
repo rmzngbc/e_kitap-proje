@@ -35,8 +35,11 @@ namespace ekitap.webui.Controllers
             var adminkitap=new kitapListViewModel()
             {
                 Kitaplar=_kitapService.GetAll()
+                
             };
-           
+
+            //--kitap entity sindeki toplam kitap sayısı:
+            ViewBag.CountKitap=_kitapService.GetCountsKitap();
             return View(adminkitap);
         }
 
@@ -215,9 +218,11 @@ namespace ekitap.webui.Controllers
         //--kategori listeleme:
         public IActionResult KategoriList()
         {
+            
             return View(new KategoriListViewModel()
             {
                 Kategoriler=_kategoriService.GetAll()
+              
             });
         }
 

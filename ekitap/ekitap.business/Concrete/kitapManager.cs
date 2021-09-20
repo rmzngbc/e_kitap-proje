@@ -77,6 +77,11 @@ namespace ekitap.business.Concrete
              _kitapRepository.Update(entity,kategoriIds,yazarIds);
         }
 
+        public int GetCountsKitap()
+        {
+            return _kitapRepository.GetCountsKitap();
+        }
+
       
         
     }

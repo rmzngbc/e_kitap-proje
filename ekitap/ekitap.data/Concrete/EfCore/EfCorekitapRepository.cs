@@ -113,7 +113,7 @@ namespace ekitap.data.Concrete.EfCore
             using (var db=new ekitapContext())
             {
                 return db.kitaplar
-                        .Where(i=>i.k_onay && (i.k_adi.ToLower().Contains(KelimeAra.ToLower()))).ToList();
+                        .Where(i=>i.k_adi.ToLower().Contains(KelimeAra.ToLower())).ToList();
                  
             }
             
@@ -189,6 +189,17 @@ namespace ekitap.data.Concrete.EfCore
             }
 
 
+        }
+
+        //kitap entity sindeki toplam kitap sayısı:
+
+        public int GetCountsKitap()
+        {
+            using (var db=new ekitapContext())
+            {
+                return db.kitaplar.Count();
+                 
+            }
         }
     
 

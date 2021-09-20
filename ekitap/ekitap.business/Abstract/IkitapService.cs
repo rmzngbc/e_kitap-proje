@@ -32,6 +32,8 @@ namespace ekitap.business.Abstract
 
         void Update(kitap entity,int kategoriIds,int[] yazarIds);
 
+        int GetCountsKitap();
+
        
     }
 }

@@ -1,4 +1,5 @@
 using ekitap.entity;
+using System.Collections.Generic;
 namespace ekitap.data.Abstract
 {
     public interface IkategoriRepository:IRepository<kategori>
@@ -6,5 +7,7 @@ namespace ekitap.data.Abstract
          kategori GetById(int id);
 
          void deletefromkategori(int kitapId);
+
+        
     }
 }
