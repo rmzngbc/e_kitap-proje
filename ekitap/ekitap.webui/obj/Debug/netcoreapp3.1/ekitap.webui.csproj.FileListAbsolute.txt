@@ -197,3 +197,10 @@ C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\ekitap.webui.dll
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\ekitap.webui.pdb
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Admin\YazarEdit.cshtml.g.cs
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs

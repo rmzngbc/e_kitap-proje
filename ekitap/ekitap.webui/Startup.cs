@@ -13,6 +13,9 @@ using ekitap.data.Abstract;
 using ekitap.data.Concrete.EfCore;
 using System.IO;
 using Microsoft.Extensions.FileProviders;
+using ekitap.webui.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace ekitap.webui
 {
@@ -22,6 +25,54 @@ namespace ekitap.webui
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            //identity:
+            services.AddDbContext<ApplicationContext>(options=> options.UseSqlite("Data Source=ekitapDb"));
+            services.AddIdentity<User,IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
+            //identity ayarları:
+
+            services.Configure<IdentityOptions>(options=> {
+                //parola--numara-büyük-küçüj harf-min 5 karakter
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireNonAlphanumeric = false;
+
+                //lockout--hesap kilitleme:
+
+                options.Lockout.MaxFailedAccessAttempts = 3;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+                options.Lockout.AllowedForNewUsers = true;
+
+                //--user--benzersiz email hesabı olmalı:
+                options.User.RequireUniqueEmail = true;
+                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedPhoneNumber = false;
+
+            });
+        
+        //--cookie ayarları:
+
+            services.ConfigureApplicationCookie(options=> {
+                options.LoginPath = "/account/login";
+                options.LogoutPath = "/account/logout";
+                options.AccessDeniedPath = "/account/accessdenied";
+                options.SlidingExpiration = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                options.Cookie = new CookieBuilder
+                {
+                    HttpOnly = true,
+                    Name = ".ekitap.Security.Cookie"
+                };
+            });
+
+
+
+
+               
+
+
             services.AddScoped<IkitapRepository,EfCorekitapRepository>();
             services.AddScoped<IkategoriRepository,EfCorekategoriRepository>();
             services.AddScoped<IyazarRepository,EfCoreyazarRepository>();
@@ -54,8 +105,10 @@ namespace ekitap.webui
             }
             
 
+            app.UseAuthentication();
             app.UseRouting();
 
+            app.UseAuthorization();
 
             //--varsayılan route
             app.UseEndpoints(endpoints =>

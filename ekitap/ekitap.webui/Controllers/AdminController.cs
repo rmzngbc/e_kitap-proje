@@ -12,10 +12,13 @@ using ekitap.webui.Models;
 
 
 using Microsoft.AspNetCore.Http;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace ekitap.webui.Controllers
-{
+{   
+
+    //sadece login olanlar erişebilecek.
+    [Authorize]
     public class AdminController:Controller
     {
         private IkitapService _kitapService;
