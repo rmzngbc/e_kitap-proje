@@ -1,4 +1,7 @@
 
+@model YazarModel;
+
+
 <style>
     li{
         display: inline-block;
@@ -6,6 +9,17 @@
         color: black;
         font-size: 20px;
     }
+
+    
+    
+
+    a:active{
+        color:red;
+    }
+
+
+  
+  
 </style>
 
 <!--
@@ -59,34 +73,65 @@
    
         <div class="col-md-4">
            
-            <ul>
+            @if (ViewBag.yazarlar.Count>0)
+            {
+                <h2>Yazarlar:</h2>
+            }
+            
+
             @foreach (var item in (List<yazar>)ViewBag.yazarlar)
             {   
-            
-            
-                <li style="display:block;">
-                    <a href="#"> @item.yazarad @item.yazarsoyad</a>
-                </li>
+                
+                @* @(Model.yazarlar.Any(i=>i.yazarId==item.yazarId)?"active":"" *@
+                <a href="/yazarlar/@item.yazarad[0]/@item.yazarId"
+                    class="list-group-item list-group-item-action @(Model.yazarlar.Any(i=>i.yazarId==item.yazarId)?"active":"")">
+                     @item.yazarad @item.yazarsoyad
+                </a>
+                
 
             }
-            </ul>
+            
         </div>
 
 
         
         <div class="col-md-8">
-             @* <ul>
-                @foreach (var item in (List<yazar>)ViewBag.yazarlar)
-                {   
-                    
-                    
-                    <li style="display:block;">
-                        <a href="/yazarlar/@item.yazarId"> @item.yazarad @item.yazarsoyad</a>
-                    </li>
 
-                }
-            </ul> *@
 
+            <div class="row">
+
+                    @if (Model.yazarlar.Count>0)
+                    {
+                        <h1>Kitapları:</h1>
+                    }
+
+                    @foreach (var item in @Model.yazarlar)
+                    {
+                        @foreach (var itemA in item.kitapyazarlar)
+                        {   
+
+                            <div class="col-md-3">
+                                <div class="card mb-2">
+                                        <img class="card-img-top" src="~/img/@itemA.kitap.k_resim" alt="">
+                                        <div class="card-body">
+                                            <h5 class="card-title">@itemA.kitap.k_adi</h5>
+                                            <small class="text-muted">
+                                                <i class="fas fa-lira-sign"></i>fiyat:@itemA.kitap.k_fiyat tl
+                                            </small>
+                                        </div>
+                                    
+                                        <div class="card-footer text-center">
+                                            <a asp-controller="ekitapislem" asp-action="details" asp-route-url="@itemA.kitap.Url" class="btn btn-primary btn-sm mb-2">incele</a>
+                                            <a class="btn btn-primary btn-sm">sepete ekle</a>
+                                        </div>
+                                    </div>
+                            </div>
+                        }
+
+                    }   
+
+           
+             </div>
         </div>
         
 

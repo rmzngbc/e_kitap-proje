@@ -34,5 +34,18 @@ namespace ekitap.data.Concrete.EfCore
                  
             }
         }
+
+
+        public List<yazar> YazarListHarf(string harf,int id)
+        {
+            using (var db=new ekitapContext())
+            {
+                 return db.yazarlar.Where(i=>i.yazarad.StartsWith(harf) && i.yazarId==id)
+                                  .Include(i=>i.kitapyazarlar)
+                                  .ThenInclude(i=>i.kitap)  
+                                  .ToList();
+                 
+            }
+        }
     }
 }

@@ -82,16 +82,25 @@ namespace ekitap.webui.Controllers
         --ilk harfi yazılan harf olan yazarları listeleyelim:
         */
         //--yazarlar:
-        public IActionResult yazarlar(string harf)
+        public IActionResult yazarlar(string harf,int id)
         {
             
-            Console.WriteLine(harf);
-       
+            
+          
+            
+            var yazark=new YazarModel()
+            {
+                yazarlar=_yazarService.YazarListHarf(harf,id)
+            };
+
+            
             ViewBag.yazarlar=_yazarService.YazarListHarf(harf);
           
          
-            return View();
+            return View(yazark);
         }
+
+       
 
        
 
