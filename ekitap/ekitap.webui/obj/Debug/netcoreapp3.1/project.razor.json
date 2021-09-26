@@ -14444,6 +14444,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\ekitapislem\\yazarlar.cshtml",
+      "TargetPath": "Views\\ekitapislem\\yazarlar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\AdminPanel.cshtml",
       "TargetPath": "Views\\Admin\\AdminPanel.cshtml",
       "FileKind": "mvc"

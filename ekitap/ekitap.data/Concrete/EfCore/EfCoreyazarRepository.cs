@@ -20,5 +20,19 @@ namespace ekitap.data.Concrete.EfCore
             }
 
         }
+
+        //--yazılan harfe göre yazarları listeleme-ve bu yazarın kitaplarını listeleme::
+
+        public List<yazar> YazarListHarf(string harf)
+        {
+            using (var db=new ekitapContext())
+            {
+                return db.yazarlar.Where(i=>i.yazarad.StartsWith(harf))
+                                  .Include(i=>i.kitapyazarlar)
+                                  .ThenInclude(i=>i.kitap)  
+                                  .ToList();
+                 
+            }
+        }
     }
 }

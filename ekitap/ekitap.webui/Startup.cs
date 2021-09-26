@@ -215,6 +215,13 @@ namespace ekitap.webui
                     defaults:new{controller="admin",action="YazarEdit"}
                 );
 
+                //--yazar-navbar:
+
+                endpoints.MapControllerRoute(
+                    name:"ekitapyazarlist",
+                    pattern:"/yazarlar/{harf?}",
+                    defaults:new{controller="ekitapislem",action="yazarlar"}
+                );
 
 
 

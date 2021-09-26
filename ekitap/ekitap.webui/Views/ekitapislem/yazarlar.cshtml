@@ -1,0 +1,95 @@
+
+<style>
+    li{
+        display: inline-block;
+        margin-right: 20px;
+        color: black;
+        font-size: 20px;
+    }
+</style>
+
+<!--
+    --harf linklerine tıklanacak ve yazarlar listelenecek:
+-->
+<ul >
+    <li ><a href="/yazarlar/a">A</a></li>
+    <li ><a href="">B</a></li>
+    <li ><a href="">C</a></li>
+    <li ><a href="">Ç</a></li>
+    <li ><a href="">D</a></li>
+    <li ><a href="">E</a></li>
+    <li ><a href="">F</a></li>
+    <li ><a href="">G</a></li>
+    <li ><a href="">H</a></li>
+    <li ><a href="">I</a></li>
+    <li ><a href="">İ</a></li>
+    <li ><a href="">J</a></li>
+    <li ><a href="">K</a></li>
+    <li ><a href="">L</a></li>
+    <li ><a href="">M</a></li>
+    <li ><a href="">N</a></li>
+    <li ><a href="">O</a></li>
+    <li ><a href="">Ö</a></li>
+    <li ><a href="">P</a></li>
+    <li ><a href="/yazarlar/r">R</a></li>
+     <li ><a href="">S</a></li>
+    <li ><a href="">Ş</a></li>
+    <li ><a href="">T</a></li>
+    <li ><a href="">U</a></li>
+    <li ><a href="">Ü</a></li>
+    <li ><a href="">V</a></li>
+    <li ><a href="">Y</a></li>
+    <li ><a href="">Z</a></li>
+    
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+    <!--
+        --tıklanan harf linkine göre yazarların listesi ve bu yazarlara ait kitaplar
+    -->
+   
+        <div class="col-md-4">
+           
+            <ul>
+            @foreach (var item in (List<yazar>)ViewBag.yazarlar)
+            {   
+            
+            
+                <li style="display:block;">
+                    <a href="#"> @item.yazarad @item.yazarsoyad</a>
+                </li>
+
+            }
+            </ul>
+        </div>
+
+
+        
+        <div class="col-md-8">
+             @* <ul>
+                @foreach (var item in (List<yazar>)ViewBag.yazarlar)
+                {   
+                    
+                    
+                    <li style="display:block;">
+                        <a href="/yazarlar/@item.yazarId"> @item.yazarad @item.yazarsoyad</a>
+                    </li>
+
+                }
+            </ul> *@
+
+        </div>
+        
+
+
+
+

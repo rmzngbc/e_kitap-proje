@@ -6,7 +6,7 @@
     <h1 style="margin-top:40px">Login işlemi:</h1>
     <div class="col-md-8">
         <form asp-controller="account" asp-action="login" method="POST">
-
+            <div asp-validation-summary="All" class="text-danger"></div>
             <input type="hidden" name="ReturnUrl" value="@Model.ReturnUrl">
             <div class="form-group row">
                 <label asp-for="Email" class="col-sm-2 col-form-label"></label>

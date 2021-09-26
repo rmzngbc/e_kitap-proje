@@ -12,9 +12,11 @@ namespace ekitap.webui.Controllers
     {
         
         private IkitapService _kitapService;
-        public ekitapislemController(IkitapService kitapService)
+        private IyazarService _yazarService;
+        public ekitapislemController(IkitapService kitapService,IyazarService yazarService)
         {
             this._kitapService=kitapService;
+            this._yazarService=yazarService;
         }
 
         //--kitap ayrıntı metodu:
@@ -74,6 +76,26 @@ namespace ekitap.webui.Controllers
             return View(kitap_ara);
 
         }
+
+
+        /*
+        --ilk harfi yazılan harf olan yazarları listeleyelim:
+        */
+        //--yazarlar:
+        public IActionResult yazarlar(string harf)
+        {
+            
+            Console.WriteLine(harf);
+       
+            ViewBag.yazarlar=_yazarService.YazarListHarf(harf);
+          
+         
+            return View();
+        }
+
+       
+
+      
 
 
         

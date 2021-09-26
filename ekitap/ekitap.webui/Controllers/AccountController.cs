@@ -52,7 +52,7 @@ namespace ekitap.webui.Controllers
                 
             }
 
-            ModelState.AddModelError("","girilen email veya parolar hatalı...");
+            ModelState.AddModelError("","parola hatalı...");
             return View(model);
 
 

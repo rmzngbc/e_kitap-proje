@@ -12,5 +12,7 @@ namespace ekitap.business.Abstract
          yazar GetById(int Id);
 
          void Update(yazar entiy);
+
+         List<yazar> YazarListHarf(string harf);
     }
 }
