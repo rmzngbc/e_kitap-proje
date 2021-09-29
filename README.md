@@ -1,6 +1,6 @@
 # e_kitap-db-diagram:
 
-![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/db_diagram)
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/db_diagram.PNG)
 
 # e_kitap-proje Arayüz
 
