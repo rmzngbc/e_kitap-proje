@@ -15,6 +15,9 @@ namespace ekitap.entity
         public int kategoriId { get; set; }
         public bool k_anasayfa { get; set; }
         public List<kitapyazar> kitapyazarlar { get; set; }
+
+        public yayinevi yayinevi { get; set; }
+        public int yayineviId { get; set; }
       
         
 

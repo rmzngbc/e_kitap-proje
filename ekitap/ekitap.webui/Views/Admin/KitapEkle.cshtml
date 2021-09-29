@@ -93,6 +93,24 @@
             </div>
 
             <!--
+                --yayınevi ekleme:
+            -->
+
+            <div>
+            <label >Yayınevi</label>
+            <select asp-for="yayineviId">
+               
+                @foreach (var item in (List<yayinevi>)ViewBag.yayinevleri)
+                {
+                     <option value="@item.yayineviId">@item.yayineviAd</option>
+                }
+               
+            </select>
+            </div>
+            
+
+
+            <!--
                 --kitaba yazar ekleme
             -->
             <div style="margin-top: 10px;">

@@ -27,7 +27,7 @@ namespace ekitap.webui
         {
             
             //identity:
-            services.AddDbContext<ApplicationContext>(options=> options.UseSqlite("Data Source=ekitapDb"));
+            services.AddDbContext<ApplicationContext>(options=> options.UseSqlite("Data Source=ekitapDB"));
             services.AddIdentity<User,IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
             //identity ayarları:
 
@@ -76,10 +76,12 @@ namespace ekitap.webui
             services.AddScoped<IkitapRepository,EfCorekitapRepository>();
             services.AddScoped<IkategoriRepository,EfCorekategoriRepository>();
             services.AddScoped<IyazarRepository,EfCoreyazarRepository>();
+            services.AddScoped<IyayineviRepository,EfCoreyayineviRepository>();
 
             services.AddScoped<IkitapService,kitapManager>(); 
             services.AddScoped<IkategoriService,kategoriManager>(); 
             services.AddScoped<IyazarService,yazarManager>();
+            services.AddScoped<IyayineviService,yayineviManager>();
             services.AddControllersWithViews();
         }
 
@@ -187,7 +189,7 @@ namespace ekitap.webui
                     defaults:new{controller="ekitapislem",action="details"}
                 );
 
-
+                //--varsayılan route:
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern:"{controller=Home}/{action=Index}/{kategori?}"
@@ -222,6 +224,15 @@ namespace ekitap.webui
                     pattern:"/yazarlar/{harf?}/{id?}",
                     defaults:new{controller="ekitapislem",action="yazarlar"}
                 );
+
+                //yayinevilist:
+                 endpoints.MapControllerRoute(
+                    name:"ekitapyayinevilist",
+                    pattern:"admin/yayinevi/list",
+                    defaults:new{controller="admin",action="YayinEviList"}
+                );
+
+              
 
 
 

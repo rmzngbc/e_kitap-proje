@@ -11,6 +11,8 @@ namespace ekitap.data.Concrete.EfCore
 
         public DbSet<yazar> yazarlar { get; set; }
 
+        public DbSet<yayinevi> yayinevleri { get; set; }
+
 
 
         
@@ -21,7 +23,7 @@ namespace ekitap.data.Concrete.EfCore
         protected  override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlite("Data Source=ekitapDb");
+                .UseSqlite("Data Source=ekitapDB");
                 //.UseMySql(@"server=localhost;port=3306;database=ekitapDbA;user=root;password=rg9030;"); 
         }
 

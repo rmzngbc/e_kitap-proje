@@ -66,9 +66,14 @@ namespace ekitap.data.Migrations
                     b.Property<int>("kategoriId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("yayineviId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("kitapId");
 
                     b.HasIndex("kategoriId");
+
+                    b.HasIndex("yayineviId");
 
                     b.ToTable("kitaplar");
                 });
@@ -86,6 +91,20 @@ namespace ekitap.data.Migrations
                     b.HasIndex("kitapId");
 
                     b.ToTable("kitapyazar");
+                });
+
+            modelBuilder.Entity("ekitap.entity.yayinevi", b =>
+                {
+                    b.Property<int>("yayineviId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("yayineviAd")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("yayineviId");
+
+                    b.ToTable("yayinevleri");
                 });
 
             modelBuilder.Entity("ekitap.entity.yazar", b =>
@@ -110,6 +129,12 @@ namespace ekitap.data.Migrations
                     b.HasOne("ekitap.entity.kategori", "kategori")
                         .WithMany("kitaplar")
                         .HasForeignKey("kategoriId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ekitap.entity.yayinevi", "yayinevi")
+                        .WithMany("kitaplar")
+                        .HasForeignKey("yayineviId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

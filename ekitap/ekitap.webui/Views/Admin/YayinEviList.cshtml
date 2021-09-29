@@ -1,0 +1,47 @@
+@model yayineviListViewModel
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Admin YayınEvi</h1>
+        <h4>ramazan gebece</h4>
+        <hr>
+         <a asp-controller="admin" asp-action="YayinEviEkle" class="btn btn-primary btn-sm mb-5">YayinEvi Ekle</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td style="width: 30px;">Id</td>
+                    <td style="width: 100px;">YayınEvi Adı</td>
+                  
+
+                    <td style="width: 150px;"></td>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model.yayinevleri.Count>0)
+                {
+                       @foreach (var item in Model.yayinevleri)
+                        {
+                            <tr>
+                                <td>@item.yayineviId</td>
+                          
+                                <td>@item.yayineviAd</td>
+
+                                
+                            </tr>
+                        }
+                }else{
+                    <div class="alert alert-warning">
+                        <h3>YayınEvi Yok</h3>
+                    </div>
+                }
+
+             
+            </tbody>
+        </table>
+    </div>
+</div>
+

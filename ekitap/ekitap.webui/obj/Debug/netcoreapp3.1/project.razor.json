@@ -14419,6 +14419,11 @@
   "RootNamespace": "ekitap.webui",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\YayinEviEkle.cshtml",
+      "TargetPath": "Views\\Admin\\YayinEviEkle.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\ekitapislem\\List.cshtml",
       "TargetPath": "Views\\ekitapislem\\List.cshtml",
       "FileKind": "mvc"
@@ -14481,6 +14486,11 @@
     {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Shared\\Components\\kategori\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\kategori\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\YayinEviList.cshtml",
+      "TargetPath": "Views\\Admin\\YayinEviList.cshtml",
       "FileKind": "mvc"
     },
     {

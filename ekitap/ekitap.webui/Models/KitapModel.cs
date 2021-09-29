@@ -38,5 +38,7 @@ namespace ekitap.webui.Models
         public yazar yazar { get; set; }
         public List<yazar> yazarId { get; set; }
         public List<yazar> selectedyazarlar { get; set; }
+
+        public int yayineviId { get; set; }
     }
 }

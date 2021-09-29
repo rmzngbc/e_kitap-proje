@@ -102,7 +102,6 @@ C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\global.json
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\package-lock.json
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\package.json
-C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\ekitap.webui.exe
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\ekitap.webui.deps.json
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\ekitap.webui.runtimeconfig.json
@@ -159,7 +158,6 @@ C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\ekitap.data.pdb
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\ekitap.entity.pdb
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\ekitap.business.pdb
-C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\ekitap.webui.csprojAssemblyReference.cache
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\staticwebassets\ekitap.webui.StaticWebAssets.Manifest.cache
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\staticwebassets\ekitap.webui.StaticWebAssets.xml
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\ekitap.webui.MvcApplicationPartsAssemblyInfo.cache
@@ -205,3 +203,7 @@ C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\ekitapislem\yazarlar.cshtml.g.cs
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\ekitap.webui.csprojAssemblyReference.cache
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Admin\YayinEviEkle.cshtml.g.cs
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Admin\YayinEviList.cshtml.g.cs

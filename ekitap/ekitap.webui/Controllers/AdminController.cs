@@ -25,11 +25,14 @@ namespace ekitap.webui.Controllers
         private IkategoriService _kategoriService;
         private IyazarService _yazarService;
 
-        public AdminController(IkitapService kitapService,IkategoriService kategoriService,IyazarService yazarService)
+        private IyayineviService _yayineviService;
+
+        public AdminController(IkitapService kitapService,IkategoriService kategoriService,IyazarService yazarService,IyayineviService yayineviService)
         {
             this._kitapService=kitapService;
             this._kategoriService=kategoriService;
             this._yazarService=yazarService;
+            this._yayineviService=yayineviService;
 
         }
 
@@ -54,6 +57,7 @@ namespace ekitap.webui.Controllers
             //db den bütün kategorileri bir değişkene aktaralım:
             ViewBag.kategoriler=_kategoriService.GetAll();
             ViewBag.yazarlar=_yazarService.GetAll();
+            ViewBag.yayinevleri=_yayineviService.GetAll();
             return View();
         }
 
@@ -72,6 +76,7 @@ namespace ekitap.webui.Controllers
                     //k_resim=model.k_resim,
                     k_aciklama=model.k_aciklama,
                     kategoriId=model.kategoriId,
+                    yayineviId=model.yayineviId,
                     
 
                 };
@@ -416,6 +421,42 @@ namespace ekitap.webui.Controllers
             
             return RedirectToAction("YazarList");
 
+        }
+
+        //yayinevi-list:
+        public IActionResult YayinEviList()
+        {   
+            var model=new yayineviListViewModel()
+            {
+                yayinevleri=_yayineviService.GetAll()
+            };
+            return View(model);
+        }
+
+
+        //yayinevi ekle:
+
+        [HttpGet]
+        public IActionResult YayinEviEkle()
+        {
+
+            return View();
+        }
+
+
+        //--yayinei ekle:
+        [HttpPost]
+        public IActionResult YayinEviEkle(YayinEviModel model)
+        {   
+            Console.WriteLine("eklendi mi?");
+            var entity=new yayinevi()
+            {
+                yayineviAd=model.yayineviAd
+            };  
+
+            //kaydı db ye aktaralık:
+            _yayineviService.Create(entity);
+            return RedirectToAction("YayinEviList");
         }
 
         //--admin paneli:

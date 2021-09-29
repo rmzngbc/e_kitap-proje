@@ -9,8 +9,8 @@ using ekitap.webui.Identity;
 namespace ekitap.webui.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20210921100647_AddingIdentity")]
-    partial class AddingIdentity
+    [Migration("20210929155052_AddIdentity")]
+    partial class AddIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

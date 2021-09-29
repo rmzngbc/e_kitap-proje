@@ -1,6 +1,6 @@
 
 
-<div class="col-md-8">
+<div class="col-md-8" >
     <div class="row">
         @foreach (var kitap in Model.Kitaplar)
         {
@@ -11,6 +11,7 @@
                             <img class="card-img-top" src="~/img/@kitap.k_resim" alt="">
                             <div class="card-body">
                                 <h5 class="card-title">@kitap.k_adi</h5>
+                               
                                 <small class="text-muted">
                                     <i class="fas fa-lira-sign"></i>fiyat:@kitap.k_fiyat tl
                                 </small>
@@ -18,7 +19,7 @@
                         
                             <div class="card-footer text-center">
                                 <a asp-controller="ekitapislem" asp-action="details" asp-route-url="@kitap.Url" class="btn btn-primary btn-sm mb-2">incele</a>
-                                <a class="btn btn-primary btn-sm">sepete ekle</a>
+                                <a class="btn btn-primary btn-sm" >sepete ekle</a>
                             </div>
                         </div>          
                 </div>

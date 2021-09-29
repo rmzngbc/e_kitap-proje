@@ -9,8 +9,8 @@ using ekitap.data.Concrete.EfCore;
 namespace ekitap.data.Migrations
 {
     [DbContext(typeof(ekitapContext))]
-    [Migration("20210905074754_addHomekitap")]
-    partial class addHomekitap
+    [Migration("20210929154948_AddTables")]
+    partial class AddTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -68,11 +68,62 @@ namespace ekitap.data.Migrations
                     b.Property<int>("kategoriId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("yayineviId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("kitapId");
 
                     b.HasIndex("kategoriId");
 
+                    b.HasIndex("yayineviId");
+
                     b.ToTable("kitaplar");
+                });
+
+            modelBuilder.Entity("ekitap.entity.kitapyazar", b =>
+                {
+                    b.Property<int>("yazarId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("kitapId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("yazarId", "kitapId");
+
+                    b.HasIndex("kitapId");
+
+                    b.ToTable("kitapyazar");
+                });
+
+            modelBuilder.Entity("ekitap.entity.yayinevi", b =>
+                {
+                    b.Property<int>("yayineviId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("yayineviAd")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("yayineviId");
+
+                    b.ToTable("yayinevleri");
+                });
+
+            modelBuilder.Entity("ekitap.entity.yazar", b =>
+                {
+                    b.Property<int>("yazarId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("yazarad")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("yazarsoyad")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("yazarId");
+
+                    b.ToTable("yazarlar");
                 });
 
             modelBuilder.Entity("ekitap.entity.kitap", b =>
@@ -80,6 +131,27 @@ namespace ekitap.data.Migrations
                     b.HasOne("ekitap.entity.kategori", "kategori")
                         .WithMany("kitaplar")
                         .HasForeignKey("kategoriId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ekitap.entity.yayinevi", "yayinevi")
+                        .WithMany("kitaplar")
+                        .HasForeignKey("yayineviId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ekitap.entity.kitapyazar", b =>
+                {
+                    b.HasOne("ekitap.entity.kitap", "kitap")
+                        .WithMany("kitapyazarlar")
+                        .HasForeignKey("kitapId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ekitap.entity.yazar", "yazar")
+                        .WithMany("kitapyazarlar")
+                        .HasForeignKey("yazarId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
