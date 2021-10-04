@@ -69,36 +69,64 @@
                 
             <!--Yazarlar,tüm yazarlar listelenecek ve kitaba ait olan yazarlar selected gözükecek-->
              <div style="margin-top: 10px;">
-            <label >Yazar1:</label>
-            <select name="yazarIds" multiple>
-               
-                @foreach (var item in (List<yazar>)ViewBag.yazarlar)
-                {    
-                   if (Model.selectedyazarlar.Count>0)
-                   {
-                         foreach (var itema in Model.selectedyazarlar)
+                <label >Yazar1:</label>
+                <select name="yazarIds" multiple>
+                
+                    @foreach (var item in (List<yazar>)ViewBag.yazarlar)
+                    {    
+                    if (Model.selectedyazarlar.Count>0)
+                    {
+                            foreach (var itema in Model.selectedyazarlar)
+                            {
+                        if (item.yazarId==itema.yazarId)
+                        {    
+                            
+                            <option value="@item.yazarId" selected>@item.yazarad @item.yazarsoyad</option>
+                        }
+                        
+                        else
                         {
-                       if (item.yazarId==itema.yazarId)
-                       {    
-                           
-                           <option value="@item.yazarId" selected>@item.yazarad @item.yazarsoyad</option>
-                       }
-                       
-                       else
-                       {
-                           <option value="@item.yazarId">@item.yazarad @item.yazarsoyad</option>
-                       }
-                       } 
-                       
-                   } 
-                    <option value="@item.yazarId">@item.yazarad @item.yazarsoyad</option>
+                            <option value="@item.yazarId">@item.yazarad @item.yazarsoyad</option>
+                        }
+                        } 
+                        
+                    } 
+                        <option value="@item.yazarId">@item.yazarad @item.yazarsoyad</option>
 
-                                    
-                     
-                }
-             </select>
+                                        
+                        
+                    }
+                </select>
             </div>
             
+            <!--yayinevi,tüm yayinevleri listelenecek ve kiraba ait olan yayinevi selected gözükecek-->
+             <div style="margin-top: 10px;">
+                <label >Yayınevi:</label>
+                <select name="yayineviIds">
+                
+                    @foreach (var item in (List<yayinevi>)ViewBag.yayınevleri)
+                    {  
+
+                        if (item.yayineviId==Model.selectedyayinevi.yayineviId)
+                        {
+                            
+                            <option value="@item.yayineviId" selected>@item.yayineviAd</option>
+                            
+                        }
+                        else
+                        {
+                            <option value="@item.yayineviId">@item.yayineviAd</option>
+                        }
+                        
+                                
+                    } 
+                              
+
+                                        
+                        
+                    }
+                </select>
+            </div>
            
                 
 

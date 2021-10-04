@@ -39,6 +39,9 @@ namespace ekitap.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime?>("EkZaman")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
 

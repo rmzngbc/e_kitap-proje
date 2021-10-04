@@ -41,8 +41,11 @@ namespace ekitap.webui.Controllers
         }
 
         //--kategori adlarına göre kitapların listelenmesi:
-        public IActionResult List(string kategori,int page=1)
+        public IActionResult List(string kategori,string sirala,int page=1)
         {   
+            
+            ViewBag.kategoriadi=kategori;
+            ViewBag.siralamalar=sirala;
             const int pageSize=4;
 
             var kitap_ka=new kitapListViewModel()
@@ -57,7 +60,7 @@ namespace ekitap.webui.Controllers
                 },
 
 
-                Kitaplar=_kitapService.GetkitapBykategori(kategori,page,pageSize)
+                Kitaplar=_kitapService.GetkitapBykategori(kategori,sirala,page,pageSize)
             };
 
             return View(kitap_ka);

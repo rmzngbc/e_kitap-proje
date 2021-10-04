@@ -77,6 +77,7 @@ namespace ekitap.webui.Controllers
                     k_aciklama=model.k_aciklama,
                     kategoriId=model.kategoriId,
                     yayineviId=model.yayineviId,
+                    EkZaman=DateTime.Now,
                     
 
                 };
@@ -148,13 +149,16 @@ namespace ekitap.webui.Controllers
                 k_resim=entity.k_resim,
                 k_aciklama=entity.k_aciklama,
                 selectedkategori=entity.kategori,
-                selectedyazarlar=entity.kitapyazarlar.Select(i=>i.yazar).ToList()
+                selectedyazarlar=entity.kitapyazarlar.Select(i=>i.yazar).ToList(),
+                selectedyayinevi=entity.yayinevi
             };
 
             //db den bütün kategorileri bir değişkene aktaralım:
             ViewBag.kategoriler=_kategoriService.GetAll();
             //db deki yazarları bir değişkene atayalım:
             ViewBag.yazarlar=_yazarService.GetAll();
+            //den bütün yayınevlerini bir değişkene atayalım:
+            ViewBag.yayınevleri=_yayineviService.GetAll();
 
             return View(model);
 
@@ -165,7 +169,7 @@ namespace ekitap.webui.Controllers
 
         //--kitap bilgilerini güncelleme ve kategori bilgisini de güncelleme.
         [HttpPost]
-        public IActionResult KitapEdit(KitapModel model,int kategoriIds,int[] yazarIds)
+        public IActionResult KitapEdit(KitapModel model,int kategoriIds,int[] yazarIds,int yayineviIds)
         {   
             //Console.WriteLine(kategoriIds);
             var entity = _kitapService.GetById(model.kitapId);
@@ -182,12 +186,13 @@ namespace ekitap.webui.Controllers
             entity.k_resim=model.k_resim;
             entity.k_aciklama=model.k_aciklama;
             entity.kategoriId=kategoriIds;
+            entity.yayineviId=yayineviIds;
            
             
             
             //günelleme işlemi:
             //bir kitaba ait kategoriler de güncellenebilir.
-            _kitapService.Update(entity,kategoriIds,yazarIds);
+            _kitapService.Update(entity,kategoriIds,yazarIds,yayineviIds);
 
             var msg = new AlertMessage()
             {            
@@ -458,6 +463,41 @@ namespace ekitap.webui.Controllers
             _yayineviService.Create(entity);
             return RedirectToAction("YayinEviList");
         }
+
+        //yayinevi edit:
+        [HttpGet]
+        public IActionResult YayinEviEdit(int? id)
+        {
+
+            var  entity=_yayineviService.GetById((int)id);
+            var model=new YayinEviModel()
+            {
+
+                yayineviId=entity.yayineviId,
+                yayineviAd=entity.yayineviAd,
+                kitaplar=entity.kitaplar
+
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult YayinEviEdit(YayinEviModel model)
+        {
+            
+            var entity=_yayineviService.GetById(model.yayineviId);
+            entity.yayineviAd=model.yayineviAd;
+            _yayineviService.Update(entity);
+
+            Console.WriteLine("güncelleme tamamlandı");
+
+            return RedirectToAction("YayinEviList");
+
+        }
+
+
+
 
         //--admin paneli:
         public IActionResult AdminPanel()

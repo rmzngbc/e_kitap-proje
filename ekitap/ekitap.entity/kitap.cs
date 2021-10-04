@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 namespace ekitap.entity
 {
@@ -18,6 +19,10 @@ namespace ekitap.entity
 
         public yayinevi yayinevi { get; set; }
         public int yayineviId { get; set; }
+
+        public DateTime? EkZaman { get; set; }
+
+     
       
         
 

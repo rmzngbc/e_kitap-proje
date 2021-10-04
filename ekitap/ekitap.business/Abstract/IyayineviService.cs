@@ -8,5 +8,9 @@ namespace ekitap.business.Abstract
          List<yayinevi> GetAll();
 
           void Create(yayinevi entity);
+
+          yayinevi GetById(int id);
+
+          void Update(yayinevi entity);
     }
 }

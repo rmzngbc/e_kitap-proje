@@ -178,7 +178,7 @@ namespace ekitap.webui
                 
                 endpoints.MapControllerRoute(
                     name:"kitaplar",
-                    pattern:"kitaplar/{kategori?}",
+                    pattern:"kitaplar/{kategori?}/{sirala?}",
                     defaults:new{controller="ekitapislem",action="list"}
                 );
 
@@ -230,6 +230,14 @@ namespace ekitap.webui
                     name:"ekitapyayinevilist",
                     pattern:"admin/yayinevi/list",
                     defaults:new{controller="admin",action="YayinEviList"}
+                );
+
+                //yayinevi güncelleme:
+
+                endpoints.MapControllerRoute(
+                    name:"adminyayineviedit",
+                    pattern:"admin/yayinevi/{id?}",
+                    defaults:new{controller="admin",action="YayinEviEdit"}
                 );
 
               

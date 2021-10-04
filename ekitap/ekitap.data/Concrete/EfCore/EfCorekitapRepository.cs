@@ -24,6 +24,7 @@ namespace ekitap.data.Concrete.EfCore
                           .Include(i=>i.kitapyazarlar)
                           .ThenInclude(i=>i.yazar)
                           .Include(i=>i.kategori)
+                          .Include(i=>i.yayinevi)
                           .FirstOrDefault();
                  
             }
@@ -31,8 +32,83 @@ namespace ekitap.data.Concrete.EfCore
 
         //--kategoriye göre kitapları listeleme:
         //--sayfalama
-        public List<kitap> GetkitapBykategori(string kategoriad,int page,int pageSize)
-        {
+        //--sıralama işlemi
+        public List<kitap> GetkitapBykategori(string kategoriad,string sirala,int page,int pageSize)
+        {       
+            
+            //--dropdows da -en yüksek fiyat- seçilirse,kategori seçildikten sonra:
+            if (sirala=="max")
+            {
+
+                using (var db=new ekitapContext())
+                {
+                    var kitaps=db.kitaplar.AsQueryable();
+
+                    if(!string.IsNullOrEmpty(kategoriad))
+                    {
+                        kitaps=kitaps
+                                    .Where(i=>i.kategori.Url.ToLower()==kategoriad.ToLower())
+                                    .OrderByDescending(i=>i.k_fiyat);
+
+                    }
+
+                    return kitaps.Skip((page-1)*pageSize).Take(pageSize).OrderByDescending(i=>i.k_fiyat).ToList();
+                }
+                
+            }
+
+            //--dropdown da --en düşük fiyat seçilirse,kategori seçildikten sonra--
+
+            if (sirala=="min")
+            {
+
+                using (var db=new ekitapContext())
+                {
+                    var kitaps=db.kitaplar.AsQueryable();
+
+                    if(!string.IsNullOrEmpty(kategoriad))
+                    {
+                        kitaps=kitaps
+                                    .Where(i=>i.kategori.Url.ToLower()==kategoriad.ToLower())
+                                    .OrderBy(i=>i.k_fiyat);
+
+                    }
+
+                    return kitaps.Skip((page-1)*pageSize).Take(pageSize).ToList();
+                }
+                
+            }
+
+
+            //-zamana göre en yeniler:
+            
+            if (sirala=="zaman")
+            {
+
+                using (var db=new ekitapContext())
+                {
+                    var kitaps=db.kitaplar.AsQueryable();
+
+                    if(!string.IsNullOrEmpty(kategoriad))
+                    {
+                        kitaps=kitaps
+                                    .Where(i=>i.kategori.Url.ToLower()==kategoriad.ToLower())
+                                    .Where(i=>i.EkZaman>=DateTime.Now.AddDays(-7) && i.EkZaman<=DateTime.Now);
+                                   
+
+                    }
+
+                    return kitaps.Skip((page-1)*pageSize).Take(pageSize).ToList();
+                }
+                
+            }
+
+
+
+
+
+
+            //--eğer sıralam işlemi yapılmasdıysa 
             using (var db=new ekitapContext())
             {
                  var kitaps=db.kitaplar.AsQueryable();
@@ -41,6 +117,7 @@ namespace ekitap.data.Concrete.EfCore
                  {
                      kitaps=kitaps
                                 .Where(i=>i.kategori.Url.ToLower()==kategoriad.ToLower());
+                                //.OrderByDescending(i=>i.k_fiyat);
 
                  }
 
@@ -155,10 +232,10 @@ namespace ekitap.data.Concrete.EfCore
             
         }
 
-        //--kitap güncelleme,kategori ve yazarları ile birlikte:
+        //--kitap güncelleme,kategori ve yazarları,yayinevi ile birlikte:
 
 
-        public void Update(kitap entity,int kategoriIds,int[] yazarIds)
+        public void Update(kitap entity,int kategoriIds,int[] yazarIds,int yayineviIds)
         {
             using (var db=new ekitapContext())
             {
@@ -176,6 +253,7 @@ namespace ekitap.data.Concrete.EfCore
                         kitap.k_resim=entity.k_resim;
                         kitap.k_aciklama=entity.k_aciklama;
                         kitap.kategoriId=kategoriIds;
+                        kitap.yayineviId=yayineviIds;
                         
                         kitap.kitapyazarlar=yazarIds.Select(yazid=>new kitapyazar()
                         {
@@ -201,12 +279,7 @@ namespace ekitap.data.Concrete.EfCore
                  
             }
         }
-    
-
-
-
 
       
-
     }
 }

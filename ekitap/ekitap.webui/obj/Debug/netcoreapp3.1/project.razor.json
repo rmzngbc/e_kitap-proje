@@ -14494,8 +14494,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Shared\\_dropdown.cshtml",
+      "TargetPath": "Views\\Shared\\_dropdown.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\KitapEkle.cshtml",
       "TargetPath": "Views\\Admin\\KitapEkle.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\YayinEviEdit.cshtml",
+      "TargetPath": "Views\\Admin\\YayinEviEdit.cshtml",
       "FileKind": "mvc"
     },
     {

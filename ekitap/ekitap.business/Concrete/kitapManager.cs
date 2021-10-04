@@ -42,9 +42,9 @@ namespace ekitap.business.Concrete
             return _kitapRepository.GetById(id);
         }
 
-        public List<kitap> GetkitapBykategori(string kategoriad,int page,int pageSize)
+        public List<kitap> GetkitapBykategori(string kategoriad,string sirala,int page,int pageSize)
         {
-            return _kitapRepository.GetkitapBykategori(kategoriad,page,pageSize);
+            return _kitapRepository.GetkitapBykategori(kategoriad,sirala,page,pageSize);
         }
 
         public kitap GetkitapDetails(string url)
@@ -72,9 +72,9 @@ namespace ekitap.business.Concrete
              _kitapRepository.Create(entity,yazarIds);
         }
 
-        public void Update(kitap entity,int kategoriIds,int[] yazarIds)
+        public void Update(kitap entity,int kategoriIds,int[] yazarIds,int yayineviIds)
         {
-             _kitapRepository.Update(entity,kategoriIds,yazarIds);
+             _kitapRepository.Update(entity,kategoriIds,yazarIds,yayineviIds);
         }
 
         public int GetCountsKitap()

@@ -40,5 +40,11 @@ namespace ekitap.webui.Models
         public List<yazar> selectedyazarlar { get; set; }
 
         public int yayineviId { get; set; }
+
+        //yayinevi:
+        public yayinevi selectedyayinevi { get; set; }
+
+        
+
     }
 }

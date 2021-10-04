@@ -16,7 +16,7 @@ namespace ekitap.business.Abstract
 
         kitap GetById(int id);
 
-        List<kitap> GetkitapBykategori(string kategoriad,int page,int pageSize);
+        List<kitap> GetkitapBykategori(string kategoriad,string sirala,int page,int pageSize);
 
         kitap GetkitapDetails(string url);
 
@@ -30,7 +30,7 @@ namespace ekitap.business.Abstract
 
         void Create(kitap entity,int[] yazarIds);
 
-        void Update(kitap entity,int kategoriIds,int[] yazarIds);
+        void Update(kitap entity,int kategoriIds,int[] yazarIds,int yayineviIds);
 
         int GetCountsKitap();
 

@@ -24,5 +24,16 @@ namespace ekitap.business.Concrete
         {            
             return _yayineviRepository.GetAll();
         }
+
+        public yayinevi GetById(int id)
+        {
+            return _yayineviRepository.GetById(id);
+        }
+
+        public void Update(yayinevi entity)
+        {
+            _yayineviRepository.Update(entity);
+        }
+
     }
 }
