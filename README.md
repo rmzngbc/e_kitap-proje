@@ -98,3 +98,29 @@
 
 **Çıkış Yap a tıkladığımız zaman,admin paneli gözükmüyor** 
 ![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/28.png)
+
+
+**Seçenekler kısmıdan en yüksek fiyat,en düşük fiyat ve en yeniler linkleri var**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/30.png)
+
+
+
+**En yüksek fiyat linkine tıkladığımız zaman,kitap fiyatı en yüksek olandan en düşük olana göre sıralamakata**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/31.png)
+
+
+
+**En düşük fiyat linkine tıkladığımız zaman,kitap fiyatı en düşük olandan en yüksek olana göre sıralamakata**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/32.png)
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/33.png)
+
+
+
+
+**En yeniler linkine tıkladığımızda son bir hafta içinde eklenen kitapları listelemekte**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/34.png)
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/35.png)
