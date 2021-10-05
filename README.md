@@ -147,7 +147,7 @@
 
 
 **ilgili mail adresine link gönderilir ve tıklayınız linkine tıklandığında şifre yenilemek için sayfa açılır**
-![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/39.png)
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/39.PNG)
 
 
 
