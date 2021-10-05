@@ -16,11 +16,28 @@ using Microsoft.Extensions.FileProviders;
 using ekitap.webui.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+using ekitap.webui.EmailServices;
 
 namespace ekitap.webui
 {
     public class Startup
-    {
+    {   
+
+        //prop
+        private IConfiguration _configuration;
+
+        //yapıcı metod
+        //appsettings.json daki bilgilere ulaşabilmek için:
+        public Startup(IConfiguration configuration)
+        {
+            _configuration=configuration;
+
+        }
+
+        
+
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -46,13 +63,14 @@ namespace ekitap.webui
                 options.Lockout.AllowedForNewUsers = true;
 
                 //--user--benzersiz email hesabı olmalı:
+                //kullanıcı hesab onayı için email
                 options.User.RequireUniqueEmail = true;
                 options.SignIn.RequireConfirmedEmail = false;
                 options.SignIn.RequireConfirmedPhoneNumber = false;
 
             });
         
-        //--cookie ayarları:
+        //--cookie ayarları-form güvenliği::
 
             services.ConfigureApplicationCookie(options=> {
                 options.LoginPath = "/account/login";
@@ -63,7 +81,8 @@ namespace ekitap.webui
                 options.Cookie = new CookieBuilder
                 {
                     HttpOnly = true,
-                    Name = ".ekitap.Security.Cookie"
+                    Name = ".ekitap.Security.Cookie",
+                    SameSite=SameSiteMode.Strict
                 };
             });
 
@@ -82,6 +101,22 @@ namespace ekitap.webui
             services.AddScoped<IkategoriService,kategoriManager>(); 
             services.AddScoped<IyazarService,yazarManager>();
             services.AddScoped<IyayineviService,yayineviManager>();
+
+
+            //email ile gönderim için servis eklendi:
+            services.AddScoped<IEmailSender,SmtpEmailSender>(i=>
+                new SmtpEmailSender(
+                    _configuration["EmailSender:Host"],
+                    _configuration.GetValue<int>("EmailSender:Port"),
+                    _configuration.GetValue<bool>("EmailSender:EnableSSL"),
+                    _configuration["EmailSender:UserName"],
+                    _configuration["EmailSender:Password"])
+
+                );
+
+        
+
+
             services.AddControllersWithViews();
         }
 

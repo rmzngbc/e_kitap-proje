@@ -14464,6 +14464,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Account\\ForgotPassword.cshtml",
+      "TargetPath": "Views\\Account\\ForgotPassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\ekitapislem\\kitapara.cshtml",
       "TargetPath": "Views\\ekitapislem\\kitapara.cshtml",
       "FileKind": "mvc"
@@ -14476,6 +14481,11 @@
     {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Account\\Register.cshtml",
       "TargetPath": "Views\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Account\\ResetPassword.cshtml",
+      "TargetPath": "Views\\Account\\ResetPassword.cshtml",
       "FileKind": "mvc"
     },
     {
