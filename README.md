@@ -124,3 +124,50 @@
 
 
 ![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/35.png)
+
+
+
+
+**eğer kullanıcı şifresini unuttuysa şifresini resetlemek için,şifremi unuutum linkine tıklar**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/36.png)
+
+
+
+
+**şifresini yenilemek için,ilgili email adresi yazılır,bu adrese bir link gönderiliir**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/37.png)
+
+
+
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/38.png)
+
+
+
+
+**ilgili mail adresine link gönderilir ve tıklayınız linkine tıklandığında şifre yenilemek için sayfa açılır**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/39.png)
+
+
+
+
+**kullanıcı,email adresini ve yeni şifresini yazar ve butona tıklar**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/40.png)
+
+
+
+**şifreniz, eğer db de yenilendiyse bilgi mesajı gelir**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/41.png)
+
+
+
+
+**yeni şifre ile login olma işlemi**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/42.png)
+
+
+
+
+**yeni şifre ile login olunmuştur ve kullanıcı adı sağ üst köşede çıkmıştır**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/43.png)
