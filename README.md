@@ -171,3 +171,45 @@
 
 **yeni şifre ile login olunmuştur ve kullanıcı adı sağ üst köşede çıkmıştır**
 ![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/43.png)
+
+
+
+
+
+**yazarlar linkine tıkladıktan sonra arama kısmında yazar ad-soyad bilgisine göre yazar arama yapabiliyoruz**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/44.png)
+
+
+
+
+
+**yazar ad-soyad a göre arama işlemi,eğer db de varsa ilgili yazarın ad-soyadı listelenir**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/45.png)
+
+
+
+
+**yazar ad-soyad listelendikten sonra,yazar ad-soyad linkine tıklayarak yazara ait kitapları listeleyebiliyoruz**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/46.png)
+
+
+
+
+
+**başka bir yazar ad-soyad a göre arama yapmak istersek,aynı işlemleri gerçekleştiriyoruz**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/47.png)
+
+
+
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/48.png)
+
+
+
+
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/49.png)
+
+
