@@ -12,6 +12,10 @@ namespace ekitap.data.Abstract
 
         List<yazar> YazarListHarf(string harf,int id);
 
+        List<yazar> YazarListHarfA(string name);
+
+   
+
          
     }
 }

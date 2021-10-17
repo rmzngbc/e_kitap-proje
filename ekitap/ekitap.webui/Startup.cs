@@ -256,7 +256,7 @@ namespace ekitap.webui
 
                 endpoints.MapControllerRoute(
                     name:"ekitapyazarlist",
-                    pattern:"/yazarlar/{harf?}/{id?}",
+                    pattern:"/yazarlar/{harf?}/{id?}/{name?}",
                     defaults:new{controller="ekitapislem",action="yazarlar"}
                 );
 

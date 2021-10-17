@@ -46,6 +46,7 @@ namespace ekitap.webui.Controllers
             
             ViewBag.kategoriadi=kategori;
             ViewBag.siralamalar=sirala;
+            ViewBag.kitapadet=_kitapService.GetCountByCategory(kategori);
             const int pageSize=4;
 
             var kitap_ka=new kitapListViewModel()
@@ -85,11 +86,10 @@ namespace ekitap.webui.Controllers
         --ilk harfi yazılan harf olan yazarları listeleyelim:
         */
         //--yazarlar:
-        public IActionResult yazarlar(string harf,int id)
+        public IActionResult yazarlar(string harf,int id,string name)
         {
-            
-            
           
+
             
             var yazark=new YazarModel()
             {
@@ -98,6 +98,9 @@ namespace ekitap.webui.Controllers
 
             
             ViewBag.yazarlar=_yazarService.YazarListHarf(harf);
+            ViewBag.yazarlarA=_yazarService.YazarListHarfA(name);
+     
+          
           
          
             return View(yazark);

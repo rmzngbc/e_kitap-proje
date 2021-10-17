@@ -47,6 +47,14 @@ namespace ekitap.business.Concrete
             return _yazarRepository.YazarListHarf(harf,id);
         }
 
+        public List<yazar> YazarListHarfA(string name)
+        {
+            return _yazarRepository.YazarListHarfA(name);
+        }
+
+       
+
+
 
 
 

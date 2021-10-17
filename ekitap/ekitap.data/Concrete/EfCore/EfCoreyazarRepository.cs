@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using ekitap.data.Abstract;
@@ -22,30 +23,135 @@ namespace ekitap.data.Concrete.EfCore
         }
 
         //--yazılan harfe göre yazarları listeleme-ve bu yazarın kitaplarını listeleme::
-
+        //--ara kısmına yazılan ad+soyad a göre yazar arama
         public List<yazar> YazarListHarf(string harf)
-        {
+        {   
+
+            //Console.WriteLine(harf);
+            //Console.WriteLine(harf.Length);  
+            //string abc="ramazan";
+            //Console.WriteLine(abc);          
             using (var db=new ekitapContext())
-            {
+            {   
+
+                    
+                    if (harf==null || harf.Length==1)
+                    {
+                        var yazarlar_bir= db.yazarlar.Where(i=>i.yazarad.StartsWith(harf))
+                                                //.Include(i=>i.kitapyazarlar)
+                                                //.ThenInclude(i=>i.kitap)  
+                                                 .ToList();  
+
+
+                        return yazarlar_bir;
+
+                    }
+
+
+                    else
+                    {
+
+                        
+
+                        var cmd="SELECT  * from yazarlar as y where (y.yazarad  || ' ' || y.yazarsoyad)={0}";
+                        return db.yazarlar.FromSqlRaw(cmd,harf).ToList();
+                        
+
+
+                        /*
+                        return db.yazarlar.Where(i=>i.yazarad==harf)
+                                          //Where(i=>i.yazarad==harf)
+                                                //.Include(i=>i.kitapyazarlar)
+                                                //.ThenInclude(i=>i.kitap)  
+                                                 .ToList();
+                        */
+                        
+
+
+                        
+
+                    }
+                    
+
+
+
+                    /*
+                    return db.yazarlar.Where(i=>i.yazarad.StartsWith(harf))
+                                                //.Include(i=>i.kitapyazarlar)
+                                                //.ThenInclude(i=>i.kitap)  
+                                                 .ToList();
+                    
+                    */
+                    
+
+
+                    /*
+                    return db.yazarlar.Where(i=>i.yazarad.ToLower().Contains(harf.ToLower()))
+                                                .Include(i=>i.kitapyazarlar)
+                                                .ThenInclude(i=>i.kitap)  
+                                                 .ToList();
+                    */
+
+                /*
                 return db.yazarlar.Where(i=>i.yazarad.StartsWith(harf))
-                                  .Include(i=>i.kitapyazarlar)
-                                  .ThenInclude(i=>i.kitap)  
-                                  .ToList();
+                            .Include(i=>i.kitapyazarlar)
+                            .ThenInclude(i=>i.kitap)  
+                            .ToList();
+                
+                */
+                    
+            
+                
                  
             }
-        }
+            }
 
 
         public List<yazar> YazarListHarf(string harf,int id)
         {
             using (var db=new ekitapContext())
             {
-                 return db.yazarlar.Where(i=>i.yazarad.StartsWith(harf) && i.yazarId==id)
+                 return db.yazarlar.Where(i=>i.yazarId==id)
+                                  //.Where(i=>i.yazarad.StartsWith(harf) && i.yazarId==id)
                                   .Include(i=>i.kitapyazarlar)
                                   .ThenInclude(i=>i.kitap)  
                                   .ToList();
                  
             }
         }
+
+
+        //--arama kısmında yazar ad-soyad a göre yazar arama:
+        public List<yazar> YazarListHarfA(string name)
+        {   
+           
+            using (var db=new ekitapContext())
+            {   
+
+                /*
+                 return db.yazarlar.Where(i=>i.yazarad==name)
+                                  .Include(i=>i.kitapyazarlar)
+                                  .ThenInclude(i=>i.kitap)  
+                                  .ToList();
+                */
+
+
+            
+                Console.WriteLine(name);
+                var cmd="SELECT  * from yazarlar as y where (y.yazarad  || ' ' || y.yazarsoyad)={0}";
+                return db.yazarlar.FromSqlRaw(cmd,name).ToList();
+                        
+
+
+              
+                 
+            }
+        }
+
+
+
+
+
+
     }
 }

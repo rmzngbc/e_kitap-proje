@@ -16,5 +16,9 @@ namespace ekitap.business.Abstract
          List<yazar> YazarListHarf(string harf);
 
          List<yazar> YazarListHarf(string harf,int id);
+
+         List<yazar> YazarListHarfA(string name);
+
+     
     }
 }

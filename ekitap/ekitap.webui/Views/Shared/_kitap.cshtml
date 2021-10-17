@@ -3,7 +3,18 @@
 <div class="col-md-8" >
     
     <div class="row">
-        <h1 style="visibility: hidden;">-------------------------------------</h1>
+        @if (ViewBag.kategoriadi==null)
+        {
+            <h6>Toplam kitap adet: @ViewBag.kitapadet</h6>
+        }
+        else
+        {
+            <h6>@ViewBag.kategoriadi türü kitap adet: @ViewBag.kitapadet</h6>
+        }
+        
+        
+        <h1 style="visibility: hidden;">--------------------------</h1>
+        
          @await Html.PartialAsync("_dropdown")
     </div>
     <div class="row">
