@@ -1,6 +1,6 @@
 # e_kitap-db-diagram:
 
-![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/db_diagram.PNG)
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/50_db_diagram.PNG)
 
 # e_kitap-proje Arayüz
 
@@ -211,5 +211,84 @@
 
 
 ![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/49.png)
+
+
+
+
+
+
+
+
+**Admin Role kısmı**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/51.png)
+
+
+
+
+
+
+
+**Admin Role kısmına tıkladığımız zaman,role ekleme ve db de var olan roller listelenir**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/52.png)
+
+
+
+
+
+
+
+
+**Create Role butonuna tıkladktan sonra,bir rol adı yazılır ve kaydet butonuna tıkladıktan sonra ilgili rol db de kayıt edilir**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/53.png)
+
+
+
+
+
+
+
+**role eklendikten sonra rol listesinden gözükür**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/54.png)
+
+
+
+
+
+
+**herhangi bir role ait userları listelemek istersek edit butonuna tıklanır**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/55.png)
+
+
+
+
+
+
+**ilgili role ekleme ve ilgili rolden çıkarma işlemleri,eğer bir user ı ilgili rolden çıkarmak veya eklemek istersek checkbox işaretlenir**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/56.png)
+
+
+
+
+
+
+
+**işlem yapıldıktan sonra user role eklenir veya çıkarılır ve listede gözükür**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/57.png)
+
+
+
+
+
+
+**bir user ı rolden çıkarma  işlemi**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/58.png)
+
+
+
+
+
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/59.png)
 
 
