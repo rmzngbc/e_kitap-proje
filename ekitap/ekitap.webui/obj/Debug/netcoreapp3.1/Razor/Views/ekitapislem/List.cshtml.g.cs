@@ -27,6 +27,13 @@ using Newtonsoft.Json;
 #line hidden
 #nullable disable
 #nullable restore
+#line 6 "C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\Views\ekitapislem\List.cshtml"
 using ekitap.webui.Models;
 
@@ -34,7 +41,7 @@ using ekitap.webui.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9d58b202123177c75d165aecffe8458feed855bb", @"/Views/ekitapislem/List.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"130a22c663f9048194122d688a3a3b14bcb868ac", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7be45b4fef3805b83f01e48812e704f57930d1ca", @"/Views/_ViewImports.cshtml")]
     public class Views_ekitapislem_List : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<kitapListViewModel>
     {
         #pragma warning disable 1998

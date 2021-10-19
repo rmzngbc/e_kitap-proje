@@ -33,8 +33,15 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0a0f8e5cc5e809324ba9e51e00a56fe529757c71", @"/Views/Admin/KategoriList.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"130a22c663f9048194122d688a3a3b14bcb868ac", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7be45b4fef3805b83f01e48812e704f57930d1ca", @"/Views/_ViewImports.cshtml")]
     public class Views_Admin_KategoriList : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<KategoriListViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("method", "POST", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -136,7 +143,7 @@ WriteAttributeValue("", 1049, item.kategoriId, 1049, 16, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(" class=\"btn btn-primary btn-sm mr-2\">Düzenle</a>\r\n                                    \r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a0f8e5cc5e809324ba9e51e00a56fe529757c716874", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a0f8e5cc5e809324ba9e51e00a56fe529757c717075", async() => {
                 WriteLiteral("\r\n                                        <input type=\"hidden\" name=\"kategoriId\"");
                 BeginWriteAttribute("value", " value=\"", 1364, "\"", 1388, 1);
 #nullable restore

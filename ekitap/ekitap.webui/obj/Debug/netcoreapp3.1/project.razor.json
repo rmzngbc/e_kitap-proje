@@ -14504,6 +14504,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\RoleCreate.cshtml",
+      "TargetPath": "Views\\Admin\\RoleCreate.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Shared\\_dropdown.cshtml",
       "TargetPath": "Views\\Shared\\_dropdown.cshtml",
       "FileKind": "mvc"
@@ -14511,6 +14516,11 @@
     {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\KitapEkle.cshtml",
       "TargetPath": "Views\\Admin\\KitapEkle.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\RoleEdit.cshtml",
+      "TargetPath": "Views\\Admin\\RoleEdit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14561,6 +14571,11 @@
     {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\KategoriEkle.cshtml",
       "TargetPath": "Views\\Admin\\KategoriEkle.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\RoleList.cshtml",
+      "TargetPath": "Views\\Admin\\RoleList.cshtml",
       "FileKind": "mvc"
     },
     {

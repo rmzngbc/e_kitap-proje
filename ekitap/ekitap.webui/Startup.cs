@@ -152,6 +152,35 @@ namespace ekitap.webui
             {   
 
                 
+
+                //role list route:
+
+                endpoints.MapControllerRoute(
+                    name: "adminroles", 
+                    pattern: "admin/role/list",
+                    defaults: new {controller="Admin",action="RoleList"}
+                );
+
+
+                //role create route:
+
+                endpoints.MapControllerRoute(
+                    name: "adminrolecreate", 
+                    pattern: "admin/role/create",
+                    defaults: new {controller="Admin",action="RoleCreate"}
+                ); 
+
+                //role-edit:
+
+                endpoints.MapControllerRoute(
+                    name: "adminroleedit", 
+                    pattern: "admin/role/edit/{id?}",
+                    defaults: new {controller="Admin",action="RoleEdit"}
+                );          
+
+
+
+
              
 
                 //admin-kitap listeleme:

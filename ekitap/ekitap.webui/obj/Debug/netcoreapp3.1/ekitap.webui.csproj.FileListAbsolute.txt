@@ -211,3 +211,6 @@ C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\bin\Debug\netcoreapp3.1
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\ekitap.webui.csprojAssemblyReference.cache
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Admin\RoleCreate.cshtml.g.cs
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Admin\RoleList.cshtml.g.cs
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Admin\RoleEdit.cshtml.g.cs
