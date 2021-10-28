@@ -377,6 +377,7 @@
 
 
 
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/66.png)
 
 
 
@@ -420,6 +421,10 @@
 
 
 
-![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/59.png)
+
+
+
+
+
 
 
