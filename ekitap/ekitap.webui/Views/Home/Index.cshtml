@@ -6,82 +6,109 @@
 
 
 
-<div class="col-md-4">
-        <partial name="_search"></partial>
-		@await Component.InvokeAsync("kategori")			
-</div>
-
-
-
-<div class="col-md-8">
-    <div class="row">
-        @foreach (var kitap in Model.Kitaplar)
-        {
-            <div class="col-md-3">
-                
-                
-                    <div class="card mb-2">
-                            <img class="card-img-top" src="~/img/@kitap.k_resim" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">@kitap.k_adi</h5>
-                                <small class="text-muted">
-                                    <i class="fas fa-lira-sign"></i>fiyat:@kitap.k_fiyat tl
-                                </small>
-                            </div>
-                        
-                            <div class="card-footer text-center">
-                                <a asp-controller="ekitapislem" asp-action="details" asp-route-url="@kitap.Url" class="btn btn-primary btn-sm mb-2">incele</a>
-                                <a class="btn btn-primary btn-sm">sepete ekle</a>
-                            </div>
-                        </div>          
-                </div>
-        }
-    </div>
-
-             <div class="row">
-            <div class="col">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                      
-                        @for (int i = 0; i < Model.PageInfo.TotalPages(); i++)
-                        {
-                       
-                            @if(String.IsNullOrEmpty(Model.PageInfo.CurrentCategory))
-                            {
-                                <li class="page-item @(Model.PageInfo.CurrentPage==i+1?"active":"")">
-                                    <a class="page-link" href="/?page=@(i+1)">
-                                        @(i+1)
-                                    </a>
-                                </li>  
-                            }
-
-                        
-                            else
-                            {
-                                <li class="page-item @(Model.PageInfo.CurrentPage==i+1?"active":"")">
-                                    <a class="page-link" href="//@Model.PageInfo.CurrentCategory?page=@(i+1)">
-                                        @(i+1)
-                                    </a>
-                                </li> 
-                            }
-
-                                                   
-                        }
-
-                      
-                    </ul>
-                </nav>
 
 
 
 
 
+
+
+
+
+    
+
+        <div class="row">
+
+      
+          
+            <div class="col-md-4">
+                    <partial name="_search"></partial>
+                    @await Component.InvokeAsync("kategori")			
             </div>
+
+
+
+            <div class="col-md-8">
+                <div class="row">
+                    @foreach (var kitap in Model.Kitaplar)
+                    {
+                        <div class="col-md-4">
+                            
+                            
+                                <div class="card mb-2">
+                                        <img class="card-img-top" src="~/img/@kitap.k_resim" alt="">
+                                        <div class="card-body">
+                                            <h5 class="card-title">@kitap.k_adi</h5>
+                                            <small class="text-muted">
+                                                <i class="fas fa-lira-sign"></i>fiyat:@kitap.k_fiyat tl
+                                            </small>
+                                        </div>
+                                    
+                                        <div class="card-footer text-center">
+                                            <a asp-controller="ekitapislem" asp-action="details" asp-route-url="@kitap.Url" class="btn btn-primary btn-sm mb-2">incele</a>
+                                            <a class="btn btn-primary btn-sm">sepete ekle</a>
+                                        </div>
+                                    </div>          
+                            </div>
+                    }
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                        
+                            @for (int i = 0; i < Model.PageInfo.TotalPages(); i++)
+                            {
+                        
+                                @if(String.IsNullOrEmpty(Model.PageInfo.CurrentCategory))
+                                {
+                                    <li class="page-item @(Model.PageInfo.CurrentPage==i+1?"active":"")">
+                                        <a class="page-link" href="/?page=@(i+1)">
+                                            @(i+1)
+                                        </a>
+                                    </li>  
+                                }
+
+                            
+                                else
+                                {
+                                    <li class="page-item @(Model.PageInfo.CurrentPage==i+1?"active":"")">
+                                        <a class="page-link" href="//@Model.PageInfo.CurrentCategory?page=@(i+1)">
+                                            @(i+1)
+                                        </a>
+                                    </li> 
+                                }
+
+                                                    
+                            }
+
+                        
+                        </ul>
+                    </nav>
+
+
+
+
+
+                </div>
+            </div>
+        
         </div>
 
 
-</div>	
-</div>
+     
+
+
+
+           
+
+
+     
+
+
+
 
 
 

@@ -15,11 +15,23 @@
                     <a href="/yazarlar" class="nav-link">Yazarlar</a>
                 </li>
 
+                <!--
+                    --eğer bir user login olduysa ve Admin rolüne sahpse;
+                        Admin Paneli linkini görebilir
+                -->
                 @if (User.Identity.IsAuthenticated)
-                {
-                    <li class="nav-item" style="margin-left: 25px;">
-                        <a href="/admin/AdminPanel" class="nav-link">Admin Paneli</a>
-                    </li>
+                {   
+
+                    
+                    if (User.IsInRole("Admin"))
+                    {
+                         <li class="nav-item" style="margin-left: 25px;">
+                            <a href="/admin/AdminPanel" class="nav-link">Admin Paneli</a>
+                         </li>
+                        
+                    }
+                    
+                   
                 }
                 
                

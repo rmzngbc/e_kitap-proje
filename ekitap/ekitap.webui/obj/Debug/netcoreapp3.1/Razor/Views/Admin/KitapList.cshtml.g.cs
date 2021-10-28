@@ -40,8 +40,15 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\Views\_ViewImports.cshtml"
+using ekitap.webui.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"56c810649fdf3e51b75f57e351e203f0e8183724", @"/Views/Admin/KitapList.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7be45b4fef3805b83f01e48812e704f57930d1ca", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8a04bab9151f10ed451360caa9a204a83b97c21b", @"/Views/_ViewImports.cshtml")]
     public class Views_Admin_KitapList : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<kitapListViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "admin", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -87,7 +94,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral(")</h1>\r\n        <h4>ramazan gebece</h4>\r\n        <hr>\r\n         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "56c810649fdf3e51b75f57e351e203f0e81837246694", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "56c810649fdf3e51b75f57e351e203f0e81837246887", async() => {
                 WriteLiteral("Kitap Ekle");
             }
             );
@@ -148,7 +155,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "56c810649fdf3e51b75f57e351e203f0e81837249679", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "56c810649fdf3e51b75f57e351e203f0e81837249872", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -257,7 +264,7 @@ WriteAttributeValue("", 2324, item.kitapId, 2324, 13, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(" class=\"btn btn-primary btn-sm mr-2\">Edit</a>\r\n                                 \r\n                                  ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "56c810649fdf3e51b75f57e351e203f0e818372414818", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "56c810649fdf3e51b75f57e351e203f0e818372415011", async() => {
                 WriteLiteral("\r\n                                        <input type=\"hidden\" name=\"kitapId\"");
                 BeginWriteAttribute("value", " value=\"", 2604, "\"", 2625, 1);
 #nullable restore

@@ -150,8 +150,24 @@ namespace ekitap.webui
             //--varsayılan route
             app.UseEndpoints(endpoints =>
             {   
-
                 
+                //--user liste route:
+                endpoints.MapControllerRoute(
+                    name: "adminroles", 
+                    pattern: "admin/user/list",
+                    defaults: new {controller="Admin",action="UserList"}
+                );
+
+                //--user edit route:
+
+                endpoints.MapControllerRoute(
+                    name: "adminroles", 
+                    pattern: "admin/user/edit/{id?}",
+                    defaults: new {controller="Admin",action="UserEdit"}
+                );
+                
+
+
 
                 //role list route:
 

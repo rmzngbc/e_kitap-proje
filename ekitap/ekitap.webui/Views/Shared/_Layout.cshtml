@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    @RenderSection("Css",false)
     <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
   
     <title>Kitap</title>
@@ -30,14 +31,21 @@
             </div>
     }  
 
-    <div class="container">
 
-         <div class="row">
-             
-             @RenderBody()
-         </div>
-    </div>
+    <main class="my-3">
 
+        <div class="container">
+            
+                  @RenderBody()
+            
+          
+        </div>
+
+
+    </main>
+
+
+    
 
     
 

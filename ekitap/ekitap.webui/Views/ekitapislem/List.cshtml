@@ -5,15 +5,22 @@
 
 
 
-<div class="col-md-4">
-		@await Component.InvokeAsync("kategori")			
+<div class="row">
+
+
+
+
+	<div class="col-md-4">
+			@await Component.InvokeAsync("kategori")			
+	</div>
+		
+
+	
+
+
+	@await Html.PartialAsync("_kitap")
+
 </div>
-    
-
- 
-
-
-@await Html.PartialAsync("_kitap")
 
 
 

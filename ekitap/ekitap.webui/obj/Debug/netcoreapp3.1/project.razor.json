@@ -14489,6 +14489,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\UserList.cshtml",
+      "TargetPath": "Views\\Admin\\UserList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Shared\\_navbar.cshtml",
       "TargetPath": "Views\\Shared\\_navbar.cshtml",
       "FileKind": "mvc"
@@ -14496,6 +14501,11 @@
     {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Shared\\Components\\kategori\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\kategori\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\UserEdit.cshtml",
+      "TargetPath": "Views\\Admin\\UserEdit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14581,6 +14591,11 @@
     {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Admin\\YazarEkle.cshtml",
       "TargetPath": "Views\\Admin\\YazarEkle.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Account\\AccessDenied.cshtml",
+      "TargetPath": "Views\\Account\\AccessDenied.cshtml",
       "FileKind": "mvc"
     }
   ],

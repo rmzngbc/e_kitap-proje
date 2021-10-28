@@ -214,3 +214,6 @@ C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Admin\RoleCreate.cshtml.g.cs
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Admin\RoleList.cshtml.g.cs
 C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Admin\RoleEdit.cshtml.g.cs
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UserList.cshtml.g.cs
+C:\Users\ramaz\Desktop\proje_e-kitap\ekitap\ekitap.webui\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UserEdit.cshtml.g.cs

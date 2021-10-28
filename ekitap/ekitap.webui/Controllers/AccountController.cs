@@ -187,6 +187,18 @@ namespace ekitap.webui.Controllers
             return View(model);
         }
 
+
+
+        /*
+        yetkisi olmayan user,ilgili linke  tıkladığında erişim sağlayamaz;
+        accesdenied action metoduna yönlendirilir(Startup--cookies de ayarlandı)
+        */
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
+
         //--bilgi mesajı method:
 
         private void CreateMessage(string message,string alerttype)
