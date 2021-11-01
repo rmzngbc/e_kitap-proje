@@ -37,4 +37,8 @@ namespace ekitap.data.Concrete.EfCore
 
         
     }
+
+
+
+
 }

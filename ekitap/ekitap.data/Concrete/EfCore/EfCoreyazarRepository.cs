@@ -17,6 +17,16 @@ namespace ekitap.data.Concrete.EfCore
                                    .Include(i=>i.kitapyazarlar)
                                    .ThenInclude(i=>i.kitap) 
                                    .FirstOrDefault();
+
+                /*
+                    --SQL sorgusu:
+                    -- yazarlara ait olan kitapları listeleyelim:
+
+                        SELECT ya.yazarad,group_concat(ki.k_adi) as kitaplar
+                        from yazarlar as ya JOIN kitapyazar as ky on ya.yazarId=ky.yazarId
+                        JOIN kitaplar as ki on ky.kitapId=ki.kitapId
+                        GROUP by ya.yazarad;
+                */
                  
             }
 
@@ -41,6 +51,17 @@ namespace ekitap.data.Concrete.EfCore
                                                 //.Include(i=>i.kitapyazarlar)
                                                 //.ThenInclude(i=>i.kitap)  
                                                  .ToList();  
+
+                        /*
+                            --SQL Sorgusu:
+                            --baş harfi "R" ile başlayan yazarları ve bu yazarlara ait olan kitapları listeleyelim:
+
+                                SELECT (ya.yazarad || " " || ya.yazarsoyad) as yazarlar,
+                                group_concat(ki.k_adi) as kitaplar,count(ki.kitapId) as adet
+                                from yazarlar as ya JOIN kitapyazar as ky on ya.yazarId=ky.yazarId
+                                JOIN kitaplar as ki on ky.kitapId=ki.kitapId where ya.yazarad like 'R%'
+                                GROUP by yazarlar;
+                        */
 
 
                         return yazarlar_bir;

@@ -11,9 +11,10 @@ namespace ekitap.data.Concrete.EfCore
     public class EfCorekitapRepository : 
           EfCoreGenericRepository<kitap, ekitapContext>, IkitapRepository
     {
-        //bir ürüne ait bilgileri ve o ürüne ait katerogi bilgilerini;
-            //listeleyelim
-
+      
+        /*
+        --bir kitaba ait(kitapId sine göre),kitap bilgilerini,hangi kategoriye,yayinevine ait olduğunu ve kitabın yazar-yazarlarını listeleyelim:
+        */    
         public kitap GetById(int id)
         {
             using (var db=new ekitapContext())
@@ -26,6 +27,24 @@ namespace ekitap.data.Concrete.EfCore
                           .Include(i=>i.kategori)
                           .Include(i=>i.yayinevi)
                           .FirstOrDefault();
+                
+                
+                /*
+                --SQL sorgusu:
+
+                SELECT ki.kitapId,ki.k_adi,ka.ka_adi,ye.yayineviAd,group_concat(ya.yazarad) as yazarlar
+                FROM kitaplar as ki JOIN kategoriler as ka on ki.kategoriId=ka.kategoriId
+                JOIN yayinevleri as ye on ki.yayineviId=ye.yayineviId
+                JOIN kitapyazar as ky on ki.kitapId=ky.kitapId
+                JOIN yazarlar as ya on ky.yazarId=ya.yazarId
+                WHERE ki.kitapId=1;
+                */
+
+
+                
+
+
+
                  
             }
         }
@@ -49,6 +68,14 @@ namespace ekitap.data.Concrete.EfCore
                         kitaps=kitaps
                                     .Where(i=>i.kategori.Url.ToLower()==kategoriad.ToLower())
                                     .OrderByDescending(i=>i.k_fiyat);
+                        
+                        /*
+                        --SQL Sorgusu:
+                        -- seçilen kategoriye göre listelenen kitapları fiyat sırasına göre sıralayalım:
+ 
+                        SELECT * from kategoriler as ka JOIN kitaplar as ki on ka.kategoriId=ki.kategoriId
+                        where ka.ka_adi="Roman" order by ki.k_fiyat desc;
+                        */
 
                     }
 
@@ -98,6 +125,14 @@ namespace ekitap.data.Concrete.EfCore
 
                     }
 
+                    /*
+                        --SQL Sorgusu:
+                        --ilgili kategorriye göre son bir hafta içinde eklenen kitapları listeleyelim:(en yeniler):
+
+                            SELECT * from kategoriler as ka JOIN kitaplar as ki on ka.kategoriId=ki.kategoriId
+                            where ki.EkZaman BETWEEN  datetime('now','-7 day') and  datetime('now');
+                    */
+
                     return kitaps.Skip((page-1)*pageSize).Take(pageSize).ToList();
                 }
                 
@@ -125,7 +160,7 @@ namespace ekitap.data.Concrete.EfCore
             }
         }
 
-        //ürün detay metod:
+        //kitap detay metod:
 
         public kitap GetkitapDetails(string url)
         {
@@ -155,6 +190,18 @@ namespace ekitap.data.Concrete.EfCore
                                     .Where(i=>i.kategori.ka_adi.ToLower()==category.ToLower());
                                     
                 }
+
+                /*
+                --SQL Sorgusu:
+
+                --kategori adlarına göre kitap adetletini listeleyelim:
+
+                    SELECT ka.ka_adi as kategoriad,count(ki.kitapId) as kitap_adet
+                    from kategoriler as ka JOIN kitaplar as ki on ka.kategoriId=ki.kategoriId
+                    group by ka.ka_adi;
+
+
+                */
 
                 return kitaplar.Count();
             }
@@ -191,7 +238,13 @@ namespace ekitap.data.Concrete.EfCore
             {
                 return db.kitaplar
                         .Where(i=>i.k_adi.ToLower().Contains(KelimeAra.ToLower())).ToList();
-                 
+                
+
+                /*
+                    --SQL Sorgusu:
+                    -- aranılan kelimeye göre kitap arama:
+                    SELECT * from kitaplar  where k_adi like '%_____%';
+                */
             }
             
         }
