@@ -1,6 +1,7 @@
 # e_kitap-db-diagram:
 
-![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/50_db_diagram.PNG)
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/67.PNG)
 
 # e_kitap-proje Arayüz
 
@@ -378,6 +379,180 @@
 
 
 ![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/66.png)
+
+
+
+
+
+
+
+**sepetim linki eklendi,kayıt olan her user ın bir sepetıd si var**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/68.png)
+
+
+
+
+
+
+
+**sepetim e tıkladığımız zaman,userın login olması gerekmektedir**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/69.png)
+
+
+
+
+
+
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/70.png)
+
+
+
+
+
+
+
+**user,login olduktan sonra sepetindeki kitaplar listelenir,eğer sepetinde kitap yoksa sepetinizde kitap yok mesajı gözükür**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/71.png)
+
+
+
+
+
+
+
+
+**sepete ekle butonuna tıklayalım**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/72.png)
+
+
+
+
+
+
+
+**eklenen kitap,ilgili userın sepetinde listelenir**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/73.png)
+
+
+
+
+
+
+
+**birden fazla kitap seçerek sepete ekleyelim**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/74.png)
+
+
+
+
+
+
+
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/75.png)
+
+
+
+
+
+
+
+
+**kitaplar listelendi,seçilen kitaplara ait toplam adet ve toplam fiyat hesaplandı**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/76.png)
+
+
+
+
+
+
+
+
+
+
+**eğer sepetimizdeki kitapların adedinde bir güncelleme yapmak istersek(ekleme veya silme),kitap adedini belirtip,sepet icon butonu tıklıyoruz**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/77.png)
+
+
+
+
+
+
+
+
+
+**güncelleme işleminden sonra sepet listesi**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/78.png)
+
+
+
+
+
+
+
+
+
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/79.png)
+
+
+
+
+
+
+
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/80.png)
+
+
+
+
+
+
+
+
+
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/81.png)
+
+
+
+
+
+
+
+
+
+**sepetteki bir kitabın adedini tamamen silmek istersek,sil icon butonuna tıklıyoruz**
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/82.png)
+
+
+
+
+
+
+
+
+
+
+
+
+![](https://github.com/rmzngbc/e_kitap-proje/blob/master/ekitap_resim/83.png)
+
+
+
+
+
+
+
+
+
 
 
 
