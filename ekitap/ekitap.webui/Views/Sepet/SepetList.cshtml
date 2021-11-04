@@ -1,0 +1,150 @@
+
+
+@model SepetModel
+
+<!--
+<i class="fa fa-times fa-fw"></i>
+-->
+
+@if (Model.SepetItems.Count==0)
+{
+
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-warning">
+                Sepetinizde ürün yok.
+            </div>
+        </div>
+    </div>
+    
+}
+
+
+else{
+<h1 class="h3">Sepetim</h1>
+<hr>
+<div class="row">
+    <div class="col-md-8">
+        <table class="table hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Kitap Adı</th>
+                    <th>Fiyat</th>
+                    <th>Kitap Adet</th>
+                    <th>Toplam Fiyat</th>
+                    <th>Güncelle</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.SepetItems)
+                {
+                    <tr>
+                        <td>
+                            <img src="~/img/@item.kitapresim" width="80" alt="">
+                        </td>
+                        <td>@item.kitapadi</td>
+                        <td>@item.kitapfiyat</td>
+                        <td>@item.kitapadet</td>
+                        <td>@(item.kitapadet*item.kitapfiyat)</td>
+                        <td>
+
+                            <!--
+                                --sepete ekleme uaptıtan sonra ,sepet list inde kitap adet güncellemesi apma
+                            -->
+                            <form asp-controller="Sepet" asp-action="UpdateToSepet" method="POST" class="form-inline">
+
+                                    <input type="hidden" name="SepetItemId" value="@Model.SepetId">
+                                    <input type="hidden" name="kitapId" value="@item.kitapId">
+                                    
+                                    <div class="input-group mb-3">
+                                        <input type="number" name="adet" class="form-control" value="@item.kitapadet" min="1" step="1" style="width: 100px;">
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="fas fa-shopping-cart"></i>                               
+                                            </button>
+                                        </div>
+                            </div>     
+                            
+                                </form>
+                        </td>
+                        <td>
+                            
+                            <!--
+                                --sil iconu:
+                            -->
+                            <form asp-controller="Sepet" asp-action="DeleteFromSepet" method="post">
+                                    <input type="hidden" name="SepetItemId" value="@item.SepetItemId">
+                                    <input type="hidden" name="kitapId" value="@item.kitapId">
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                            </form>
+
+
+
+  
+                        </td>
+
+
+                     
+
+                      
+                      
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--
+        --sepetteki kitapların toplam fiyatı:
+    -->
+
+     <div class="col-md-4">
+        <div class="text-left">
+            <h4>Sepet Özeti</h4>
+        </div>
+        <table class="table">
+            <tbody>
+
+              
+                <tr>
+                    <th>Sepet Toplam</th>
+                    <td>@Model.ToplamFiyat().ToString("c")</td>
+                </tr>
+
+                
+                <tr>
+                    <th>Kargo</th>
+                    <th>Ücretsiz</th>
+                </tr>
+
+              
+                 <tr>
+                    <th>Sipariş Toplam</th>
+                    <th>@Model.ToplamFiyat().ToString("c")</th>
+                </tr>
+            </tbody>
+        </table>
+
+       
+        <div class="text-center">
+            <a href="/" class="btn btn-primary">
+                <i class="fa fa-arrow-circle-left fa-fw"></i>Alışverişe Devam Et
+            </a>
+
+            <a href="/checkout" class="btn btn-primary">
+                <i class="fa fa-arrow-circle-right fa-fw"></i>SiparişVer
+            </a>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+}

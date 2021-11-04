@@ -14479,6 +14479,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Sepet\\SepetList.cshtml",
+      "TargetPath": "Views\\Sepet\\SepetList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ramaz\\Desktop\\proje_e-kitap\\ekitap\\ekitap.webui\\Views\\Account\\Register.cshtml",
       "TargetPath": "Views\\Account\\Register.cshtml",
       "FileKind": "mvc"

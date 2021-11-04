@@ -32,12 +32,12 @@ namespace ekitap.data.Concrete.EfCore
                 /*
                 --SQL sorgusu:
 
-                SELECT ki.kitapId,ki.k_adi,ka.ka_adi,ye.yayineviAd,group_concat(ya.yazarad) as yazarlar
+                SELECT ki.kitapId,ki.k_adi,ka.ka_adi,ye.yayineviAd,ya.yazarad
                 FROM kitaplar as ki JOIN kategoriler as ka on ki.kategoriId=ka.kategoriId
                 JOIN yayinevleri as ye on ki.yayineviId=ye.yayineviId
                 JOIN kitapyazar as ky on ki.kitapId=ky.kitapId
                 JOIN yazarlar as ya on ky.yazarId=ya.yazarId
-                WHERE ki.kitapId=1;
+                WHERE ki.kitapId=2;
                 */
 
 
@@ -72,9 +72,9 @@ namespace ekitap.data.Concrete.EfCore
                         /*
                         --SQL Sorgusu:
                         -- seçilen kategoriye göre listelenen kitapları fiyat sırasına göre sıralayalım:
- 
+
                         SELECT * from kategoriler as ka JOIN kitaplar as ki on ka.kategoriId=ki.kategoriId
-                        where ka.ka_adi="Roman" order by ki.k_fiyat desc;
+                        where ka.ka_adi='Roman' order by ki.k_fiyat desc;
                         */
 
                     }
@@ -129,8 +129,8 @@ namespace ekitap.data.Concrete.EfCore
                         --SQL Sorgusu:
                         --ilgili kategorriye göre son bir hafta içinde eklenen kitapları listeleyelim:(en yeniler):
 
-                            SELECT * from kategoriler as ka JOIN kitaplar as ki on ka.kategoriId=ki.kategoriId
-                            where ki.EkZaman BETWEEN  datetime('now','-7 day') and  datetime('now');
+                          SELECT * from kategoriler as ka JOIN kitaplar as ki on ka.kategoriId=ki.kategoriId
+                        where ki.EkZaman BETWEEN dateadd(day,-7,getdate()) and  getdate();          
                     */
 
                     return kitaps.Skip((page-1)*pageSize).Take(pageSize).ToList();

@@ -56,11 +56,14 @@ namespace ekitap.data.Concrete.EfCore
                             --SQL Sorgusu:
                             --baş harfi "R" ile başlayan yazarları ve bu yazarlara ait olan kitapları listeleyelim:
 
-                                SELECT (ya.yazarad || " " || ya.yazarsoyad) as yazarlar,
-                                group_concat(ki.k_adi) as kitaplar,count(ki.kitapId) as adet
+                                SELECT (ya.yazarad + ' ' + ya.yazarsoyad) as yazarlar,
+                                count(ki.kitapId) as adet
                                 from yazarlar as ya JOIN kitapyazar as ky on ya.yazarId=ky.yazarId
                                 JOIN kitaplar as ki on ky.kitapId=ki.kitapId where ya.yazarad like 'R%'
-                                GROUP by yazarlar;
+								group by (ya.yazarad + ' ' + ya.yazarsoyad);
+
+
+                             
                         */
 
 
@@ -74,7 +77,7 @@ namespace ekitap.data.Concrete.EfCore
 
                         
 
-                        var cmd="SELECT  * from yazarlar as y where (y.yazarad  || ' ' || y.yazarsoyad)={0}";
+                        var cmd="SELECT  * from yazarlar as y where (y.yazarad  + ' ' + y.yazarsoyad)={0}";
                         return db.yazarlar.FromSqlRaw(cmd,harf).ToList();
                         
 
@@ -159,7 +162,7 @@ namespace ekitap.data.Concrete.EfCore
 
             
                 Console.WriteLine(name);
-                var cmd="SELECT  * from yazarlar as y where (y.yazarad  || ' ' || y.yazarsoyad)={0}";
+                var cmd="SELECT  * from yazarlar as y where (y.yazarad  + ' ' + y.yazarsoyad)={0}";
                 return db.yazarlar.FromSqlRaw(cmd,name).ToList();
                         
 

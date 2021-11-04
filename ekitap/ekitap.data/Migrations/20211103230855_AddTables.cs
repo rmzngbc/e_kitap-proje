@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ekitap.data.Migrations
 {
@@ -11,7 +12,7 @@ namespace ekitap.data.Migrations
                 columns: table => new
                 {
                     kategoriId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     ka_adi = table.Column<string>(nullable: true),
                     Url = table.Column<string>(nullable: true)
                 },
@@ -21,11 +22,24 @@ namespace ekitap.data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Sepets",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sepets", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "yayinevleri",
                 columns: table => new
                 {
                     yayineviId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     yayineviAd = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -38,7 +52,7 @@ namespace ekitap.data.Migrations
                 columns: table => new
                 {
                     yazarId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     yazarad = table.Column<string>(nullable: true),
                     yazarsoyad = table.Column<string>(nullable: true)
                 },
@@ -52,7 +66,7 @@ namespace ekitap.data.Migrations
                 columns: table => new
                 {
                     kitapId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     k_adi = table.Column<string>(nullable: true),
                     Url = table.Column<string>(nullable: true),
                     k_fiyat = table.Column<double>(nullable: true),
@@ -62,7 +76,8 @@ namespace ekitap.data.Migrations
                     k_onay = table.Column<bool>(nullable: false),
                     kategoriId = table.Column<int>(nullable: false),
                     k_anasayfa = table.Column<bool>(nullable: false),
-                    yayineviId = table.Column<int>(nullable: false)
+                    yayineviId = table.Column<int>(nullable: false),
+                    EkZaman = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -105,6 +120,33 @@ namespace ekitap.data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "SepetItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    kitapId = table.Column<int>(nullable: false),
+                    SepetId = table.Column<int>(nullable: false),
+                    Adet = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SepetItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SepetItems_Sepets_SepetId",
+                        column: x => x.SepetId,
+                        principalTable: "Sepets",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SepetItems_kitaplar_kitapId",
+                        column: x => x.kitapId,
+                        principalTable: "kitaplar",
+                        principalColumn: "kitapId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_kitaplar_kategoriId",
                 table: "kitaplar",
@@ -119,6 +161,16 @@ namespace ekitap.data.Migrations
                 name: "IX_kitapyazar_kitapId",
                 table: "kitapyazar",
                 column: "kitapId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SepetItems_SepetId",
+                table: "SepetItems",
+                column: "SepetId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SepetItems_kitapId",
+                table: "SepetItems",
+                column: "kitapId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -127,10 +179,16 @@ namespace ekitap.data.Migrations
                 name: "kitapyazar");
 
             migrationBuilder.DropTable(
-                name: "kitaplar");
+                name: "SepetItems");
 
             migrationBuilder.DropTable(
                 name: "yazarlar");
+
+            migrationBuilder.DropTable(
+                name: "Sepets");
+
+            migrationBuilder.DropTable(
+                name: "kitaplar");
 
             migrationBuilder.DropTable(
                 name: "kategoriler");

@@ -13,6 +13,12 @@ namespace ekitap.data.Concrete.EfCore
 
         public DbSet<yayinevi> yayinevleri { get; set; }
 
+        public DbSet<Sepet> Sepets { get; set; }
+
+        public DbSet<SepetItem> SepetItems { get; set; }
+
+        
+
 
 
         
@@ -23,8 +29,9 @@ namespace ekitap.data.Concrete.EfCore
         protected  override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlite("Data Source=ekitapDB");
+                //.UseSqlite("Data Source=ekitapDB");
                 //.UseMySql(@"server=localhost;port=3306;database=ekitapDbA;user=root;password=rg9030;"); 
+                .UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=ekitapDB;Integrated Security=SSPI;");
         }
 
         //--fluent api--kitapyazar entity si için:

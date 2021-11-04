@@ -44,7 +44,7 @@ namespace ekitap.webui
         {
             
             //identity:
-            services.AddDbContext<ApplicationContext>(options=> options.UseSqlite("Data Source=ekitapDB"));
+            services.AddDbContext<ApplicationContext>(options=> options.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=ekitapDB;Integrated Security=SSPI;"));
             services.AddIdentity<User,IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
             //identity ayarları:
 
@@ -96,11 +96,13 @@ namespace ekitap.webui
             services.AddScoped<IkategoriRepository,EfCorekategoriRepository>();
             services.AddScoped<IyazarRepository,EfCoreyazarRepository>();
             services.AddScoped<IyayineviRepository,EfCoreyayineviRepository>();
+            services.AddScoped<ISepetRepository,EfCoreSepetRepository>();    
 
             services.AddScoped<IkitapService,kitapManager>(); 
             services.AddScoped<IkategoriService,kategoriManager>(); 
             services.AddScoped<IyazarService,yazarManager>();
             services.AddScoped<IyayineviService,yayineviManager>();
+            services.AddScoped<ISepetService,SepetManager>(); 
 
 
             //email ile gönderim için servis eklendi:
@@ -150,7 +152,15 @@ namespace ekitap.webui
             //--varsayılan route
             app.UseEndpoints(endpoints =>
             {   
-                
+
+                //--sepet route:
+                endpoints.MapControllerRoute(
+                    name: "sepet", 
+                    pattern: "SepetList",
+                    defaults: new {controller="Sepet",action="SepetList"}
+                ); 
+
+
                 //--user liste route:
                 endpoints.MapControllerRoute(
                     name: "adminroles", 

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using ekitap.webui.Models;
 using ekitap.webui.EmailServices;
 using Newtonsoft.Json;
+using ekitap.business.Abstract;
 
 namespace ekitap.webui.Controllers
 {   
@@ -18,14 +19,19 @@ namespace ekitap.webui.Controllers
 
         private IEmailSender _emailSender;
 
+        private ISepetService _sepetService;
+
+
+
 
 
         //--yapıcı metod:
-        public AccountController(UserManager<User> userManager,SignInManager<User> signInManager,IEmailSender emailSender)
+        public AccountController(UserManager<User> userManager,SignInManager<User> signInManager,IEmailSender emailSender,ISepetService sepetService)
         {
             _userManager=userManager;
             _signInManager=signInManager;
             _emailSender=emailSender;
+            _sepetService=sepetService;
         }
 
 
@@ -92,7 +98,11 @@ namespace ekitap.webui.Controllers
             //password hasleme:
             var result=await _userManager.CreateAsync(user,model.Password);
             if (result.Succeeded)
-            {
+            {   
+
+                //--yeni kayıt olan her bir user için sepetId oluştur:
+                //email:ragebA@gmail.com,,rG2190+_
+                _sepetService.InitializeSepet(user.Id);
                 return RedirectToAction("Login","Account");
             }
 

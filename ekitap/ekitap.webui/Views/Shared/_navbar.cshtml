@@ -44,6 +44,9 @@
                 --eğer kullanıcı login ise linkleri göster:
             -->
             <ul class="navbar-nav ml-auto">
+                <li>
+                    <a href="/SepetList" class="nav-link"><i class="fas fa-shopping-cart"></i> Sepetim</a>
+                </li>
                 @if (User.Identity.IsAuthenticated)
                 {   
                     <li class="nav-item">

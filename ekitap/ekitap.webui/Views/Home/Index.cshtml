@@ -46,7 +46,11 @@
                                     
                                         <div class="card-footer text-center">
                                             <a asp-controller="ekitapislem" asp-action="details" asp-route-url="@kitap.Url" class="btn btn-primary btn-sm mb-2">incele</a>
-                                            <a class="btn btn-primary btn-sm">sepete ekle</a>
+                                            <form asp-controller="Sepet" asp-action="AddToSepet" method="POST">
+                                                <input type="hidden" name="kitapId" value="@kitap.kitapId">
+                                                <input type="hidden" name="adet" value="1">
+                                                <button type="submit" class="btn btn-primary btn-sm">Sepete Ekle</button>
+                                            </form>
                                         </div>
                                     </div>          
                             </div>

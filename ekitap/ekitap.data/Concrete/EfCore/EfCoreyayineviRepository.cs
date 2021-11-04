@@ -22,9 +22,8 @@ namespace ekitap.data.Concrete.EfCore
                 --SQL Sorgusu:
                 -- yayinevleri adına göre  kitapları listeleyelim:
 
-                    SELECT ye.yayineviAd as yayinevi,group_concat(ki.k_adi) as kitaplar
-                    from yayinevleri as ye JOIN kitaplar as ki on ye.yayineviId=ki.yayineviId
-                    GROUP by ye.yayineviAd;
+                   SELECT ye.yayineviAd as yayinevi,ki.k_adi
+                   from yayinevleri as ye JOIN kitaplar as ki on ye.yayineviId=ki.yayineviId order by ye.yayineviAd asc;
                 */
 
 
